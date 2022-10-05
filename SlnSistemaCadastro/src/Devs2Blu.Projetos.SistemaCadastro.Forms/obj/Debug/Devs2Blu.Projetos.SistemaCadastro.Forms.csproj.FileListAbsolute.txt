@@ -1,0 +1,10 @@
+C:\devs2blu\AulasBancoDeDados\ProjetoSistemaCadastro\SlnSistemaCadastro\src\Devs2Blu.Projetos.SistemaCadastro.Forms\bin\Debug\Devs2Blu.Projetos.SistemaCadastro.Forms.exe.config
+C:\devs2blu\AulasBancoDeDados\ProjetoSistemaCadastro\SlnSistemaCadastro\src\Devs2Blu.Projetos.SistemaCadastro.Forms\bin\Debug\Devs2Blu.Projetos.SistemaCadastro.Forms.exe
+C:\devs2blu\AulasBancoDeDados\ProjetoSistemaCadastro\SlnSistemaCadastro\src\Devs2Blu.Projetos.SistemaCadastro.Forms\bin\Debug\Devs2Blu.Projetos.SistemaCadastro.Forms.pdb
+C:\devs2blu\AulasBancoDeDados\ProjetoSistemaCadastro\SlnSistemaCadastro\src\Devs2Blu.Projetos.SistemaCadastro.Forms\obj\Debug\Devs2Blu.Projetos.SistemaCadastro.Forms.csproj.AssemblyReference.cache
+C:\devs2blu\AulasBancoDeDados\ProjetoSistemaCadastro\SlnSistemaCadastro\src\Devs2Blu.Projetos.SistemaCadastro.Forms\obj\Debug\Devs2Blu.Projetos.SistemaCadastro.Forms.csproj.SuggestedBindingRedirects.cache
+C:\devs2blu\AulasBancoDeDados\ProjetoSistemaCadastro\SlnSistemaCadastro\src\Devs2Blu.Projetos.SistemaCadastro.Forms\obj\Debug\Devs2Blu.Projetos.SistemaCadastro.Forms.Properties.Resources.resources
+C:\devs2blu\AulasBancoDeDados\ProjetoSistemaCadastro\SlnSistemaCadastro\src\Devs2Blu.Projetos.SistemaCadastro.Forms\obj\Debug\Devs2Blu.Projetos.SistemaCadastro.Forms.csproj.GenerateResource.cache
+C:\devs2blu\AulasBancoDeDados\ProjetoSistemaCadastro\SlnSistemaCadastro\src\Devs2Blu.Projetos.SistemaCadastro.Forms\obj\Debug\Devs2Blu.Projetos.SistemaCadastro.Forms.csproj.CoreCompileInputs.cache
+C:\devs2blu\AulasBancoDeDados\ProjetoSistemaCadastro\SlnSistemaCadastro\src\Devs2Blu.Projetos.SistemaCadastro.Forms\obj\Debug\Devs2Blu.Projetos.SistemaCadastro.Forms.exe
+C:\devs2blu\AulasBancoDeDados\ProjetoSistemaCadastro\SlnSistemaCadastro\src\Devs2Blu.Projetos.SistemaCadastro.Forms\obj\Debug\Devs2Blu.Projetos.SistemaCadastro.Forms.pdb
