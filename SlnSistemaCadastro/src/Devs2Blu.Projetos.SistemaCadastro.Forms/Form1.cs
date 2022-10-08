@@ -1,4 +1,5 @@
 ﻿using Devs2Blu.Projetos.SistemaCadastro.Forms.Data;
+using Devs2Blu.Projetos.SistemaCadastro.Models.Model;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -15,12 +16,41 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
     public partial class FormMain : Form
     {
         public MySqlConnection Conn { get; set; }
-
         public ConvenioRepository ConvenioRepository = new ConvenioRepository();
+        public PacienteRepository PacienteRepository = new PacienteRepository();
+
         public FormMain()
         {
             InitializeComponent();
         }
+
+        #region Methods
+
+        private void PopulaComboConvenio()
+        {
+            var listConvenios = ConvenioRepository.FetchAll();
+
+            cbbox_Convenio.DataSource = new BindingSource(listConvenios, null);
+            cbbox_Convenio.DisplayMember = "nome";
+            cbbox_Convenio.ValueMember = "id";
+        }
+
+        private bool ValidaFormCadastro()
+        {
+            if (txtb_Nome.Text.Equals("")) { return false; }
+            if (masktxtb_CGCCPF.Text.Equals("")) { return false; }
+            //if (cbbox_Convenio.SelectedIndex.Equals(-1)) { return false; }
+            //if (masktxtb_CEP.Text.Equals("")) { return false; }
+            //if (cbbox_UF.SelectedIndex.Equals(-1)) { return false; }
+            //if (txtb_Cidade.Text.Equals("")) { return false; }
+            //if (txtb_Bairro.Text.Equals("")) { return false; }
+            //if (txtb_Rua.Text.Equals("")) { return false; }
+            //if (txtb_Numero.Text.Equals("")) { return false; }
+
+            return true;
+        }
+
+        #endregion
 
         #region Eventos
 
@@ -56,21 +86,22 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
             }
         }
 
-        #endregion
-
-        #region Methods
-
-        private void PopulaComboConvenio()
+        private void btn_Cadastrar_Click(object sender, EventArgs e)
         {
-            var listConvenios = ConvenioRepository.FetchAll();
-
-            while (listConvenios.Read())
+            if (ValidaFormCadastro())
             {
-                cbBoxConvenio.Items.Add(listConvenios.GetString("nome"));
+                Paciente paciente = new Paciente();
+                paciente.Pessoa.Nome = txtb_Nome.Text;
+                paciente.Pessoa.CGCCPF = masktxtb_CGCCPF.Text;
+                paciente.Convenio.Id = (int)cbbox_Convenio.SelectedValue;
+                var pacienteResult = PacienteRepository.Save(paciente);
+                if (pacienteResult.Pessoa.Id > 0)
+                {
+                    MessageBox.Show($"Pessoa {paciente.Pessoa.Id} - {paciente.Pessoa.Nome} salvo com sucesso!", "Adicionar Pessoa", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
         }
 
         #endregion
-
     }
 }

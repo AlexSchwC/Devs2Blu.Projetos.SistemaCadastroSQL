@@ -13,7 +13,7 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Models.Model
         public String Setor { get; set; }
         public Recepcionista()
         {
-            TipoPessoa = TipoPessoa.PF;
+
         }
     }
 }

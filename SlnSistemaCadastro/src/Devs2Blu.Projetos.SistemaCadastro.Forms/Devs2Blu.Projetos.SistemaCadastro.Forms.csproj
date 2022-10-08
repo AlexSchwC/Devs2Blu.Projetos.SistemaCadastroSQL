@@ -92,6 +92,7 @@
   <ItemGroup>
     <Compile Include="Data\ConnectionMySQL.cs" />
     <Compile Include="Data\ConvenioRepository.cs" />
+    <Compile Include="Data\PacienteRepository.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +126,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Devs2Blu.Projeto.OOP3.Models\Devs2Blu.Projetos.SistemaCadastro.Models.csproj">
+      <Project>{4C2DB384-2626-4FAE-B045-EBEB09A3862F}</Project>
+      <Name>Devs2Blu.Projetos.SistemaCadastro.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
