@@ -1,12 +1,12 @@
-C:\devs2blu\AulasBancoDeDados\ProjetoSistemaCadastro\SlnSistemaCadastro\src\Devs2Blu.Projeto.OOP3.Models\bin\Debug\Devs2Blu.Projeto.OOP3.Models.dll
-C:\devs2blu\AulasBancoDeDados\ProjetoSistemaCadastro\SlnSistemaCadastro\src\Devs2Blu.Projeto.OOP3.Models\bin\Debug\Devs2Blu.Projeto.OOP3.Models.pdb
 C:\devs2blu\AulasBancoDeDados\ProjetoSistemaCadastro\SlnSistemaCadastro\src\Devs2Blu.Projeto.OOP3.Models\obj\Debug\Devs2Blu.Projetos.SistemaCadastro.Models.csproj.AssemblyReference.cache
 C:\devs2blu\AulasBancoDeDados\ProjetoSistemaCadastro\SlnSistemaCadastro\src\Devs2Blu.Projeto.OOP3.Models\obj\Debug\Devs2Blu.Projetos.SistemaCadastro.Models.csproj.CoreCompileInputs.cache
-C:\devs2blu\AulasBancoDeDados\ProjetoSistemaCadastro\SlnSistemaCadastro\src\Devs2Blu.Projeto.OOP3.Models\obj\Debug\Devs2Blu.Projeto.OOP3.Models.dll
-C:\devs2blu\AulasBancoDeDados\ProjetoSistemaCadastro\SlnSistemaCadastro\src\Devs2Blu.Projeto.OOP3.Models\obj\Debug\Devs2Blu.Projeto.OOP3.Models.pdb
 D:\Devs2Blu\Projetos\Devs2Blu.Projetos.SistemaCadastroSQL\SlnSistemaCadastro\src\Devs2Blu.Projeto.OOP3.Models\bin\Debug\Devs2Blu.Projetos.SistemaCadastro.Models.dll
 D:\Devs2Blu\Projetos\Devs2Blu.Projetos.SistemaCadastroSQL\SlnSistemaCadastro\src\Devs2Blu.Projeto.OOP3.Models\bin\Debug\Devs2Blu.Projetos.SistemaCadastro.Models.pdb
 D:\Devs2Blu\Projetos\Devs2Blu.Projetos.SistemaCadastroSQL\SlnSistemaCadastro\src\Devs2Blu.Projeto.OOP3.Models\obj\Debug\Devs2Blu.Projetos.SistemaCadastro.Models.csproj.AssemblyReference.cache
 D:\Devs2Blu\Projetos\Devs2Blu.Projetos.SistemaCadastroSQL\SlnSistemaCadastro\src\Devs2Blu.Projeto.OOP3.Models\obj\Debug\Devs2Blu.Projetos.SistemaCadastro.Models.csproj.CoreCompileInputs.cache
 D:\Devs2Blu\Projetos\Devs2Blu.Projetos.SistemaCadastroSQL\SlnSistemaCadastro\src\Devs2Blu.Projeto.OOP3.Models\obj\Debug\Devs2Blu.Projetos.SistemaCadastro.Models.dll
 D:\Devs2Blu\Projetos\Devs2Blu.Projetos.SistemaCadastroSQL\SlnSistemaCadastro\src\Devs2Blu.Projeto.OOP3.Models\obj\Debug\Devs2Blu.Projetos.SistemaCadastro.Models.pdb
+C:\devs2blu\AulasBancoDeDados\ProjetoSistemaCadastro\SlnSistemaCadastro\src\Devs2Blu.Projeto.OOP3.Models\bin\Debug\Devs2Blu.Projetos.SistemaCadastro.Models.dll
+C:\devs2blu\AulasBancoDeDados\ProjetoSistemaCadastro\SlnSistemaCadastro\src\Devs2Blu.Projeto.OOP3.Models\bin\Debug\Devs2Blu.Projetos.SistemaCadastro.Models.pdb
+C:\devs2blu\AulasBancoDeDados\ProjetoSistemaCadastro\SlnSistemaCadastro\src\Devs2Blu.Projeto.OOP3.Models\obj\Debug\Devs2Blu.Projetos.SistemaCadastro.Models.dll
+C:\devs2blu\AulasBancoDeDados\ProjetoSistemaCadastro\SlnSistemaCadastro\src\Devs2Blu.Projeto.OOP3.Models\obj\Debug\Devs2Blu.Projetos.SistemaCadastro.Models.pdb

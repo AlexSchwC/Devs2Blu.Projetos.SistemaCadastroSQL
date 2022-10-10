@@ -9,11 +9,9 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Models.Enum
 {
     public enum FlStatus
     {
-        [Description("Excluído")]
-        E = 0,
         [Description("Ativo")]
-        A = 1,
+        A = 0,
         [Description("Inativo")]
-        I = 2
+        I = 1
     }
 }

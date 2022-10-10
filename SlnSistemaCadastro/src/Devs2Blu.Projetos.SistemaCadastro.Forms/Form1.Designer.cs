@@ -28,9 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cbbox_Convenio = new System.Windows.Forms.ComboBox();
+            this.cbox_Convenio = new System.Windows.Forms.ComboBox();
             this.lblConvenio = new System.Windows.Forms.Label();
             this.gbox_cadastro = new System.Windows.Forms.GroupBox();
+            this.gbox_Editar = new System.Windows.Forms.GroupBox();
+            this.btn_Exluir = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbox_StatusPessoa = new System.Windows.Forms.ComboBox();
+            this.gbox_Paciente = new System.Windows.Forms.GroupBox();
+            this.txtb_Risco = new System.Windows.Forms.TextBox();
+            this.cbox_Obito = new System.Windows.Forms.ComboBox();
+            this.lbl_Status = new System.Windows.Forms.Label();
+            this.lbl_Obito = new System.Windows.Forms.Label();
+            this.cbox_StatusPaciente = new System.Windows.Forms.ComboBox();
+            this.lbl_Risco = new System.Windows.Forms.Label();
             this.masktxtb_CGCCPF = new System.Windows.Forms.MaskedTextBox();
             this.btn_Salvar = new System.Windows.Forms.Button();
             this.gbox_Endereco = new System.Windows.Forms.GroupBox();
@@ -63,32 +74,33 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.lbl_Status = new System.Windows.Forms.Label();
-            this.cbox_StatusPaciente = new System.Windows.Forms.ComboBox();
-            this.lbl_Risco = new System.Windows.Forms.Label();
-            this.lbl_Obito = new System.Windows.Forms.Label();
-            this.cbox_Obito = new System.Windows.Forms.ComboBox();
-            this.gbox_Paciente = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cbox_StatusPessoa = new System.Windows.Forms.ComboBox();
-            this.txtb_Risco = new System.Windows.Forms.TextBox();
+            this.rb_Cadastrar = new System.Windows.Forms.RadioButton();
+            this.rb_Alterar = new System.Windows.Forms.RadioButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtb_idAlteracao = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtb_idExcluir = new System.Windows.Forms.TextBox();
+            this.btn_BuscaPaciente = new System.Windows.Forms.Button();
             this.gbox_cadastro.SuspendLayout();
+            this.gbox_Editar.SuspendLayout();
+            this.gbox_Paciente.SuspendLayout();
             this.gbox_Endereco.SuspendLayout();
             this.gbBox_rbTipoPessoa.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_Pacientes)).BeginInit();
             this.gbox_Conteudo.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.gbox_Paciente.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // cbbox_Convenio
+            // cbox_Convenio
             // 
-            this.cbbox_Convenio.FormattingEnabled = true;
-            this.cbbox_Convenio.Location = new System.Drawing.Point(68, 56);
-            this.cbbox_Convenio.Name = "cbbox_Convenio";
-            this.cbbox_Convenio.Size = new System.Drawing.Size(115, 21);
-            this.cbbox_Convenio.TabIndex = 0;
+            this.cbox_Convenio.FormattingEnabled = true;
+            this.cbox_Convenio.Location = new System.Drawing.Point(68, 56);
+            this.cbox_Convenio.Name = "cbox_Convenio";
+            this.cbox_Convenio.Size = new System.Drawing.Size(115, 21);
+            this.cbox_Convenio.TabIndex = 0;
             // 
             // lblConvenio
             // 
@@ -101,6 +113,7 @@
             // 
             // gbox_cadastro
             // 
+            this.gbox_cadastro.Controls.Add(this.gbox_Editar);
             this.gbox_cadastro.Controls.Add(this.label7);
             this.gbox_cadastro.Controls.Add(this.cbox_StatusPessoa);
             this.gbox_cadastro.Controls.Add(this.gbox_Paciente);
@@ -114,14 +127,122 @@
             this.gbox_cadastro.Controls.Add(this.gbBox_rbTipoPessoa);
             this.gbox_cadastro.Location = new System.Drawing.Point(12, 29);
             this.gbox_cadastro.Name = "gbox_cadastro";
-            this.gbox_cadastro.Size = new System.Drawing.Size(813, 329);
+            this.gbox_cadastro.Size = new System.Drawing.Size(708, 329);
             this.gbox_cadastro.TabIndex = 2;
             this.gbox_cadastro.TabStop = false;
             this.gbox_cadastro.Text = "Formulário de Cadastro";
             // 
+            // gbox_Editar
+            // 
+            this.gbox_Editar.Controls.Add(this.txtb_idExcluir);
+            this.gbox_Editar.Controls.Add(this.label10);
+            this.gbox_Editar.Controls.Add(this.btn_Exluir);
+            this.gbox_Editar.Location = new System.Drawing.Point(422, 217);
+            this.gbox_Editar.Name = "gbox_Editar";
+            this.gbox_Editar.Size = new System.Drawing.Size(220, 100);
+            this.gbox_Editar.TabIndex = 27;
+            this.gbox_Editar.TabStop = false;
+            // 
+            // btn_Exluir
+            // 
+            this.btn_Exluir.Location = new System.Drawing.Point(23, 26);
+            this.btn_Exluir.Name = "btn_Exluir";
+            this.btn_Exluir.Size = new System.Drawing.Size(57, 54);
+            this.btn_Exluir.TabIndex = 2;
+            this.btn_Exluir.Text = "Excluir";
+            this.btn_Exluir.UseVisualStyleBackColor = true;
+            this.btn_Exluir.Click += new System.EventHandler(this.btn_Exluir_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(238, 70);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(40, 13);
+            this.label7.TabIndex = 26;
+            this.label7.Text = "Status:";
+            // 
+            // cbox_StatusPessoa
+            // 
+            this.cbox_StatusPessoa.Enabled = false;
+            this.cbox_StatusPessoa.FormattingEnabled = true;
+            this.cbox_StatusPessoa.Location = new System.Drawing.Point(281, 67);
+            this.cbox_StatusPessoa.Name = "cbox_StatusPessoa";
+            this.cbox_StatusPessoa.Size = new System.Drawing.Size(60, 21);
+            this.cbox_StatusPessoa.TabIndex = 25;
+            // 
+            // gbox_Paciente
+            // 
+            this.gbox_Paciente.Controls.Add(this.txtb_Risco);
+            this.gbox_Paciente.Controls.Add(this.cbox_Obito);
+            this.gbox_Paciente.Controls.Add(this.lbl_Status);
+            this.gbox_Paciente.Controls.Add(this.lbl_Obito);
+            this.gbox_Paciente.Controls.Add(this.cbox_StatusPaciente);
+            this.gbox_Paciente.Controls.Add(this.lbl_Risco);
+            this.gbox_Paciente.Controls.Add(this.lblConvenio);
+            this.gbox_Paciente.Controls.Add(this.cbox_Convenio);
+            this.gbox_Paciente.Location = new System.Drawing.Point(369, 22);
+            this.gbox_Paciente.Name = "gbox_Paciente";
+            this.gbox_Paciente.Size = new System.Drawing.Size(335, 88);
+            this.gbox_Paciente.TabIndex = 25;
+            this.gbox_Paciente.TabStop = false;
+            this.gbox_Paciente.Text = "Dados Paciente";
+            // 
+            // txtb_Risco
+            // 
+            this.txtb_Risco.Location = new System.Drawing.Point(213, 23);
+            this.txtb_Risco.Name = "txtb_Risco";
+            this.txtb_Risco.Size = new System.Drawing.Size(109, 20);
+            this.txtb_Risco.TabIndex = 18;
+            // 
+            // cbox_Obito
+            // 
+            this.cbox_Obito.Enabled = false;
+            this.cbox_Obito.FormattingEnabled = true;
+            this.cbox_Obito.Location = new System.Drawing.Point(242, 56);
+            this.cbox_Obito.Name = "cbox_Obito";
+            this.cbox_Obito.Size = new System.Drawing.Size(51, 21);
+            this.cbox_Obito.TabIndex = 24;
+            // 
+            // lbl_Status
+            // 
+            this.lbl_Status.AutoSize = true;
+            this.lbl_Status.Location = new System.Drawing.Point(10, 26);
+            this.lbl_Status.Name = "lbl_Status";
+            this.lbl_Status.Size = new System.Drawing.Size(40, 13);
+            this.lbl_Status.TabIndex = 20;
+            this.lbl_Status.Text = "Status:";
+            // 
+            // lbl_Obito
+            // 
+            this.lbl_Obito.AutoSize = true;
+            this.lbl_Obito.Location = new System.Drawing.Point(199, 59);
+            this.lbl_Obito.Name = "lbl_Obito";
+            this.lbl_Obito.Size = new System.Drawing.Size(38, 13);
+            this.lbl_Obito.TabIndex = 23;
+            this.lbl_Obito.Text = "Obito?";
+            // 
+            // cbox_StatusPaciente
+            // 
+            this.cbox_StatusPaciente.Enabled = false;
+            this.cbox_StatusPaciente.FormattingEnabled = true;
+            this.cbox_StatusPaciente.Location = new System.Drawing.Point(53, 23);
+            this.cbox_StatusPaciente.Name = "cbox_StatusPaciente";
+            this.cbox_StatusPaciente.Size = new System.Drawing.Size(60, 21);
+            this.cbox_StatusPaciente.TabIndex = 18;
+            // 
+            // lbl_Risco
+            // 
+            this.lbl_Risco.AutoSize = true;
+            this.lbl_Risco.Location = new System.Drawing.Point(128, 26);
+            this.lbl_Risco.Name = "lbl_Risco";
+            this.lbl_Risco.Size = new System.Drawing.Size(82, 13);
+            this.lbl_Risco.TabIndex = 22;
+            this.lbl_Risco.Text = "Paciente Risco:";
+            // 
             // masktxtb_CGCCPF
             // 
-            this.masktxtb_CGCCPF.Location = new System.Drawing.Point(79, 63);
+            this.masktxtb_CGCCPF.Location = new System.Drawing.Point(86, 67);
             this.masktxtb_CGCCPF.Name = "masktxtb_CGCCPF";
             this.masktxtb_CGCCPF.Size = new System.Drawing.Size(131, 20);
             this.masktxtb_CGCCPF.TabIndex = 18;
@@ -129,7 +250,7 @@
             // 
             // btn_Salvar
             // 
-            this.btn_Salvar.Location = new System.Drawing.Point(10, 277);
+            this.btn_Salvar.Location = new System.Drawing.Point(17, 281);
             this.btn_Salvar.Name = "btn_Salvar";
             this.btn_Salvar.Size = new System.Drawing.Size(248, 36);
             this.btn_Salvar.TabIndex = 8;
@@ -151,7 +272,7 @@
             this.gbox_Endereco.Controls.Add(this.label3);
             this.gbox_Endereco.Controls.Add(this.label2);
             this.gbox_Endereco.Controls.Add(this.label1);
-            this.gbox_Endereco.Location = new System.Drawing.Point(10, 145);
+            this.gbox_Endereco.Location = new System.Drawing.Point(17, 149);
             this.gbox_Endereco.Name = "gbox_Endereco";
             this.gbox_Endereco.Size = new System.Drawing.Size(336, 122);
             this.gbox_Endereco.TabIndex = 3;
@@ -197,6 +318,34 @@
             // cbox_UF
             // 
             this.cbox_UF.FormattingEnabled = true;
+            this.cbox_UF.Items.AddRange(new object[] {
+            "RO",
+            "AC",
+            "AM",
+            "RR",
+            "PA",
+            "AP",
+            "TO",
+            "MA",
+            "PI",
+            "CE",
+            "RN",
+            "PB",
+            "PE",
+            "AL",
+            "SE",
+            "BA",
+            "MG",
+            "ES",
+            "RJ",
+            "SP",
+            "PR",
+            "SC",
+            "RS",
+            "MS",
+            "MT",
+            "GO",
+            "DF"});
             this.cbox_UF.Location = new System.Drawing.Point(216, 23);
             this.cbox_UF.Name = "cbox_UF";
             this.cbox_UF.Size = new System.Drawing.Size(101, 21);
@@ -258,7 +407,7 @@
             // 
             // btn_Limpar
             // 
-            this.btn_Limpar.Location = new System.Drawing.Point(264, 277);
+            this.btn_Limpar.Location = new System.Drawing.Point(271, 281);
             this.btn_Limpar.Name = "btn_Limpar";
             this.btn_Limpar.Size = new System.Drawing.Size(82, 36);
             this.btn_Limpar.TabIndex = 9;
@@ -267,7 +416,7 @@
             // 
             // txtb_Nome
             // 
-            this.txtb_Nome.Location = new System.Drawing.Point(79, 25);
+            this.txtb_Nome.Location = new System.Drawing.Point(86, 29);
             this.txtb_Nome.Name = "txtb_Nome";
             this.txtb_Nome.Size = new System.Drawing.Size(256, 20);
             this.txtb_Nome.TabIndex = 6;
@@ -275,7 +424,7 @@
             // lblCGCCPF
             // 
             this.lblCGCCPF.AutoSize = true;
-            this.lblCGCCPF.Location = new System.Drawing.Point(21, 66);
+            this.lblCGCCPF.Location = new System.Drawing.Point(28, 70);
             this.lblCGCCPF.Name = "lblCGCCPF";
             this.lblCGCCPF.Size = new System.Drawing.Size(30, 13);
             this.lblCGCCPF.TabIndex = 5;
@@ -284,7 +433,7 @@
             // llbNome
             // 
             this.llbNome.AutoSize = true;
-            this.llbNome.Location = new System.Drawing.Point(21, 28);
+            this.llbNome.Location = new System.Drawing.Point(28, 32);
             this.llbNome.Name = "llbNome";
             this.llbNome.Size = new System.Drawing.Size(38, 13);
             this.llbNome.TabIndex = 4;
@@ -294,7 +443,7 @@
             // 
             this.gbBox_rbTipoPessoa.Controls.Add(this.rbJuridica);
             this.gbBox_rbTipoPessoa.Controls.Add(this.rbFisica);
-            this.gbBox_rbTipoPessoa.Location = new System.Drawing.Point(13, 98);
+            this.gbBox_rbTipoPessoa.Location = new System.Drawing.Point(20, 102);
             this.gbBox_rbTipoPessoa.Name = "gbBox_rbTipoPessoa";
             this.gbBox_rbTipoPessoa.Size = new System.Drawing.Size(146, 36);
             this.gbBox_rbTipoPessoa.TabIndex = 3;
@@ -329,24 +478,24 @@
             // 
             this.panel1.Controls.Add(this.btn_Excluir);
             this.panel1.Controls.Add(this.btn_Info);
-            this.panel1.Location = new System.Drawing.Point(12, 373);
+            this.panel1.Location = new System.Drawing.Point(12, 388);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(346, 65);
+            this.panel1.Size = new System.Drawing.Size(98, 50);
             this.panel1.TabIndex = 10;
             // 
             // btn_Excluir
             // 
-            this.btn_Excluir.Location = new System.Drawing.Point(70, 6);
+            this.btn_Excluir.Location = new System.Drawing.Point(55, 7);
             this.btn_Excluir.Name = "btn_Excluir";
-            this.btn_Excluir.Size = new System.Drawing.Size(57, 54);
+            this.btn_Excluir.Size = new System.Drawing.Size(34, 36);
             this.btn_Excluir.TabIndex = 1;
             this.btn_Excluir.UseVisualStyleBackColor = true;
             // 
             // btn_Info
             // 
-            this.btn_Info.Location = new System.Drawing.Point(7, 6);
+            this.btn_Info.Location = new System.Drawing.Point(7, 7);
             this.btn_Info.Name = "btn_Info";
-            this.btn_Info.Size = new System.Drawing.Size(57, 54);
+            this.btn_Info.Size = new System.Drawing.Size(34, 36);
             this.btn_Info.TabIndex = 0;
             this.btn_Info.UseVisualStyleBackColor = true;
             // 
@@ -364,9 +513,9 @@
             // gbox_Conteudo
             // 
             this.gbox_Conteudo.Controls.Add(this.grid_Pacientes);
-            this.gbox_Conteudo.Location = new System.Drawing.Point(831, 27);
+            this.gbox_Conteudo.Location = new System.Drawing.Point(730, 27);
             this.gbox_Conteudo.Name = "gbox_Conteudo";
-            this.gbox_Conteudo.Size = new System.Drawing.Size(537, 331);
+            this.gbox_Conteudo.Size = new System.Drawing.Size(638, 331);
             this.gbox_Conteudo.TabIndex = 11;
             this.gbox_Conteudo.TabStop = false;
             // 
@@ -381,7 +530,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // helpToolStripMenuItem
@@ -395,7 +544,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // menuStrip1
@@ -409,98 +558,94 @@
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // lbl_Status
+            // rb_Cadastrar
             // 
-            this.lbl_Status.AutoSize = true;
-            this.lbl_Status.Location = new System.Drawing.Point(10, 26);
-            this.lbl_Status.Name = "lbl_Status";
-            this.lbl_Status.Size = new System.Drawing.Size(40, 13);
-            this.lbl_Status.TabIndex = 20;
-            this.lbl_Status.Text = "Status:";
+            this.rb_Cadastrar.AutoSize = true;
+            this.rb_Cadastrar.Checked = true;
+            this.rb_Cadastrar.Location = new System.Drawing.Point(12, 16);
+            this.rb_Cadastrar.Name = "rb_Cadastrar";
+            this.rb_Cadastrar.Size = new System.Drawing.Size(70, 17);
+            this.rb_Cadastrar.TabIndex = 5;
+            this.rb_Cadastrar.TabStop = true;
+            this.rb_Cadastrar.Text = "Cadastrar";
+            this.rb_Cadastrar.UseVisualStyleBackColor = true;
+            this.rb_Cadastrar.CheckedChanged += new System.EventHandler(this.rb_Cadastrar_CheckedChanged);
             // 
-            // cbox_StatusPaciente
+            // rb_Alterar
             // 
-            this.cbox_StatusPaciente.Enabled = false;
-            this.cbox_StatusPaciente.FormattingEnabled = true;
-            this.cbox_StatusPaciente.Location = new System.Drawing.Point(53, 23);
-            this.cbox_StatusPaciente.Name = "cbox_StatusPaciente";
-            this.cbox_StatusPaciente.Size = new System.Drawing.Size(60, 21);
-            this.cbox_StatusPaciente.TabIndex = 18;
+            this.rb_Alterar.AutoSize = true;
+            this.rb_Alterar.Location = new System.Drawing.Point(88, 16);
+            this.rb_Alterar.Name = "rb_Alterar";
+            this.rb_Alterar.Size = new System.Drawing.Size(55, 17);
+            this.rb_Alterar.TabIndex = 29;
+            this.rb_Alterar.Text = "Alterar";
+            this.rb_Alterar.UseVisualStyleBackColor = true;
+            this.rb_Alterar.CheckedChanged += new System.EventHandler(this.rb_Alterar_CheckedChanged);
             // 
-            // lbl_Risco
+            // groupBox2
             // 
-            this.lbl_Risco.AutoSize = true;
-            this.lbl_Risco.Location = new System.Drawing.Point(128, 26);
-            this.lbl_Risco.Name = "lbl_Risco";
-            this.lbl_Risco.Size = new System.Drawing.Size(82, 13);
-            this.lbl_Risco.TabIndex = 22;
-            this.lbl_Risco.Text = "Paciente Risco:";
+            this.groupBox2.Controls.Add(this.btn_BuscaPaciente);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.txtb_idAlteracao);
+            this.groupBox2.Controls.Add(this.rb_Alterar);
+            this.groupBox2.Controls.Add(this.rb_Cadastrar);
+            this.groupBox2.Location = new System.Drawing.Point(138, 387);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(426, 44);
+            this.groupBox2.TabIndex = 13;
+            this.groupBox2.TabStop = false;
             // 
-            // lbl_Obito
+            // txtb_idAlteracao
             // 
-            this.lbl_Obito.AutoSize = true;
-            this.lbl_Obito.Location = new System.Drawing.Point(328, 26);
-            this.lbl_Obito.Name = "lbl_Obito";
-            this.lbl_Obito.Size = new System.Drawing.Size(38, 13);
-            this.lbl_Obito.TabIndex = 23;
-            this.lbl_Obito.Text = "Obito?";
+            this.txtb_idAlteracao.Enabled = false;
+            this.txtb_idAlteracao.Location = new System.Drawing.Point(219, 15);
+            this.txtb_idAlteracao.Name = "txtb_idAlteracao";
+            this.txtb_idAlteracao.Size = new System.Drawing.Size(109, 20);
+            this.txtb_idAlteracao.TabIndex = 25;
+            this.txtb_idAlteracao.Visible = false;
             // 
-            // cbox_Obito
+            // label9
             // 
-            this.cbox_Obito.Enabled = false;
-            this.cbox_Obito.FormattingEnabled = true;
-            this.cbox_Obito.Location = new System.Drawing.Point(371, 23);
-            this.cbox_Obito.Name = "cbox_Obito";
-            this.cbox_Obito.Size = new System.Drawing.Size(51, 21);
-            this.cbox_Obito.TabIndex = 24;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(153, 18);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(60, 13);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "Id à alterar:";
             // 
-            // gbox_Paciente
+            // label10
             // 
-            this.gbox_Paciente.Controls.Add(this.txtb_Risco);
-            this.gbox_Paciente.Controls.Add(this.cbox_Obito);
-            this.gbox_Paciente.Controls.Add(this.lbl_Status);
-            this.gbox_Paciente.Controls.Add(this.lbl_Obito);
-            this.gbox_Paciente.Controls.Add(this.cbox_StatusPaciente);
-            this.gbox_Paciente.Controls.Add(this.lbl_Risco);
-            this.gbox_Paciente.Controls.Add(this.lblConvenio);
-            this.gbox_Paciente.Controls.Add(this.cbbox_Convenio);
-            this.gbox_Paciente.Location = new System.Drawing.Point(362, 18);
-            this.gbox_Paciente.Name = "gbox_Paciente";
-            this.gbox_Paciente.Size = new System.Drawing.Size(433, 88);
-            this.gbox_Paciente.TabIndex = 25;
-            this.gbox_Paciente.TabStop = false;
-            this.gbox_Paciente.Text = "Dados Paciente";
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(90, 35);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(61, 13);
+            this.label10.TabIndex = 30;
+            this.label10.Text = "Id à excluir:";
             // 
-            // label7
+            // txtb_idExcluir
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(231, 66);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(40, 13);
-            this.label7.TabIndex = 26;
-            this.label7.Text = "Status:";
+            this.txtb_idExcluir.Location = new System.Drawing.Point(93, 51);
+            this.txtb_idExcluir.Name = "txtb_idExcluir";
+            this.txtb_idExcluir.Size = new System.Drawing.Size(109, 20);
+            this.txtb_idExcluir.TabIndex = 30;
             // 
-            // cbox_StatusPessoa
+            // btn_BuscaPaciente
             // 
-            this.cbox_StatusPessoa.Enabled = false;
-            this.cbox_StatusPessoa.FormattingEnabled = true;
-            this.cbox_StatusPessoa.Location = new System.Drawing.Point(274, 63);
-            this.cbox_StatusPessoa.Name = "cbox_StatusPessoa";
-            this.cbox_StatusPessoa.Size = new System.Drawing.Size(60, 21);
-            this.cbox_StatusPessoa.TabIndex = 25;
-            // 
-            // txtb_Risco
-            // 
-            this.txtb_Risco.Location = new System.Drawing.Point(213, 23);
-            this.txtb_Risco.Name = "txtb_Risco";
-            this.txtb_Risco.Size = new System.Drawing.Size(109, 20);
-            this.txtb_Risco.TabIndex = 18;
+            this.btn_BuscaPaciente.Location = new System.Drawing.Point(339, 13);
+            this.btn_BuscaPaciente.Name = "btn_BuscaPaciente";
+            this.btn_BuscaPaciente.Size = new System.Drawing.Size(75, 23);
+            this.btn_BuscaPaciente.TabIndex = 14;
+            this.btn_BuscaPaciente.Text = "Buscar";
+            this.btn_BuscaPaciente.UseVisualStyleBackColor = true;
+            this.btn_BuscaPaciente.Visible = false;
+            this.btn_BuscaPaciente.Click += new System.EventHandler(this.btn_BuscaPaciente_Click);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1374, 450);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.gbox_Conteudo);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.gbox_cadastro);
@@ -511,6 +656,10 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.gbox_cadastro.ResumeLayout(false);
             this.gbox_cadastro.PerformLayout();
+            this.gbox_Editar.ResumeLayout(false);
+            this.gbox_Editar.PerformLayout();
+            this.gbox_Paciente.ResumeLayout(false);
+            this.gbox_Paciente.PerformLayout();
             this.gbox_Endereco.ResumeLayout(false);
             this.gbox_Endereco.PerformLayout();
             this.gbBox_rbTipoPessoa.ResumeLayout(false);
@@ -520,8 +669,8 @@
             this.gbox_Conteudo.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.gbox_Paciente.ResumeLayout(false);
-            this.gbox_Paciente.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -529,7 +678,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox cbbox_Convenio;
+        private System.Windows.Forms.ComboBox cbox_Convenio;
         private System.Windows.Forms.Label lblConvenio;
         private System.Windows.Forms.GroupBox gbox_cadastro;
         private System.Windows.Forms.Label lblCGCCPF;
@@ -573,6 +722,16 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbox_StatusPessoa;
         private System.Windows.Forms.TextBox txtb_Risco;
+        private System.Windows.Forms.GroupBox gbox_Editar;
+        private System.Windows.Forms.Button btn_Exluir;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton rb_Alterar;
+        private System.Windows.Forms.RadioButton rb_Cadastrar;
+        private System.Windows.Forms.TextBox txtb_idAlteracao;
+        private System.Windows.Forms.TextBox txtb_idExcluir;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btn_BuscaPaciente;
     }
 }
 
