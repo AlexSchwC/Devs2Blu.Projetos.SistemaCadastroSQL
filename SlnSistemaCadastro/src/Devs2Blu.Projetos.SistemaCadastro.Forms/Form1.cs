@@ -44,7 +44,7 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
 
         private void PopulaDataGridPessoa()
         {
-            var listPessoas = PacienteRepository.GetPessoas();
+            var listPessoas = PacienteRepository.GetAllPessoas();
             grid_Pacientes.DataSource = new BindingSource(listPessoas, null);
         }
 
@@ -77,7 +77,7 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
             {
                 Paciente paciente = new Paciente();
                 Endereco endereco = new Endereco();
-                paciente.Pessoa.Id = Int32.Parse(txtb_idAlteracao.Text);
+                //paciente.Pessoa.Id = Int32.Parse(txtb_idAlteracao.Text);
                 paciente.Pessoa.Nome = txtb_Nome.Text;
                 paciente.Pessoa.CGCCPF = masktxtb_CGCCPF.Text;
                 paciente.Convenio.Id = (int)cbox_Convenio.SelectedValue;
@@ -107,11 +107,7 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
                 {
                     paciente.Status = (FlStatus)cbox_StatusPessoa.SelectedItem;
                     Int32 idBuscar = Int32.Parse(txtb_idAlteracao.Text);
-                    //var pacienteData = PacienteRepository.GetPaciente(idBuscar);
-                    //var pessoaData = PacienteRepository.GetPessoa(Int32.Parse(pacienteData.GetString("id_pessoa")));
-                    //pacienteData.Read();
-                    //pessoaData.Read();
-                    var pacienteResult = PacienteRepository.Update(paciente, Int32.Parse(txtb_idAlteracao.Text), conn);
+                    var pacienteResult = PacienteRepository.UpdatePessoa(paciente, Int32.Parse(txtb_idAlteracao.Text), conn);
                     endereco.Pessoa = paciente.Pessoa;
                     var enderecoResult = EnderecoRepository.UpdateEndereco(endereco, conn);
                     MessageBox.Show($"Pessoa {paciente.Pessoa.Id} - {paciente.Pessoa.Nome} salvo com sucesso!", "Alteração de Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

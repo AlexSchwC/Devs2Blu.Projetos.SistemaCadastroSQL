@@ -30,18 +30,31 @@ fl_obito = @fl_obito,
 id_convenio = @id_convenio
 where id_pessoa = @id;
 
+UPDATE endereco
+set CEP = @cep,
+rua = @rua,
+numero = @numero,
+bairro = @bairro,
+cidade = @cidade,
+uf = @uf
+where id_pessoa = @id_pessoa;
+
 select  
-	pa.id as Id_Paciente, 
+	pe.id as Id_Pessoa, 
 	pe.fl_status as 'Status', 
 	pe.nome as Nome, 
 	pe.cgccpf as CPF, 
 	pa.numero_prontuario as N_Prontuário, 
 	pa.paciente_risco as Risco, 
+    pa.fl_obito as 'Obito?',
     c.id as Id_Convenio,
 	c.nome as Convenio,
     e.UF,
     e.Cidade,
-    e.CEP
+    e.CEP,
+    e.Bairro,
+    e.Rua,
+    e.Numero
 from paciente pa
 	inner join pessoa pe on pa.id_pessoa = pe.id
     inner join convenio c on pa.id_convenio = c.id

@@ -51,7 +51,7 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms.Data
             }
         }
 
-        public Paciente Update(Paciente paciente, Int32 idAlterar, MySqlConnection conn)
+        public Paciente UpdatePessoa(Paciente paciente, Int32 idAlterar, MySqlConnection conn)
         {
             try
             {
@@ -131,7 +131,7 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms.Data
             }
         }
 
-        internal MySqlDataReader GetPessoas()
+        internal MySqlDataReader GetAllPessoas()
         {
             MySqlConnection conn = ConnectionMySQL.GetConnection();
 
@@ -153,6 +153,27 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms.Data
 
         private const String SQL_SELECT_PACIENTE = @"select * from paciente where id_pessoa = @id_pessoa";
         private const String SQL_SELECT_PESSOA = @"SELECT * from pessoa where id = @id_pessoa";
+        private const String SQL_SELECT_PACIENTES = @"select  
+	pe.id as Id_Pessoa, 
+	pe.fl_status as 'Status', 
+	pe.nome as Nome, 
+	pe.cgccpf as CPF, 
+	pa.numero_prontuario as N_Prontuário, 
+	pa.paciente_risco as Risco, 
+    pa.fl_obito as 'Obito?',
+    c.id as Id_Convenio,
+	c.nome as Convenio,
+    e.UF,
+    e.Cidade,
+    e.CEP,
+    e.Bairro,
+    e.Rua,
+    e.Numero
+from paciente pa
+	inner join pessoa pe on pa.id_pessoa = pe.id
+    inner join convenio c on pa.id_convenio = c.id
+    inner join endereco e on pe.id = e.id_pessoa;";
+
         private const String SQL_INSERT_PESSOA = @"INSERT INTO pessoa
 (nome,
 cgccpf,
@@ -163,31 +184,6 @@ VALUES
 @cgccpf,
 @tipo_pessoa,
 'A')";
-        private const String SQL_UPDATE_PESSOA = @"UPDATE pessoa
-SET nome = @nome,
-fl_status = @fl_status
-where id = @id_pessoa;";
-        private const String SQL_UPDATE_PACIENTE = @"UPDATE paciente
-set fl_status = @fl_status,
-paciente_risco = @paciente_risco,
-fl_obito = @fl_obito,
-id_convenio = @id_convenio
-where id_pessoa = @id;";
-        private const String SQL_SELECT_PACIENTES = @"select 
-	pe.id as Id_Pessoa, 
-	pe.fl_status as 'Status', 
-	pe.nome as Nome, 
-	pe.cgccpf as CPF, 
-	pa.numero_prontuario as N_Prontuário, 
-	pa.paciente_risco as Risco, 
-	c.nome as Convenio ,
-    e.UF,
-    e.Cidade,
-    e.CEP
-from paciente pa
-	inner join pessoa pe on pa.id_pessoa = pe.id
-    inner join convenio c on pa.id_convenio = c.id
-    inner join endereco e on pe.id = e.id_pessoa;";
         private const String SQL_INSERT_PACIENTE = @"INSERT INTO paciente
 (id_pessoa,
 id_convenio,
@@ -202,6 +198,18 @@ VALUES
 @paciente_risco,
 'A',
 0)";
+
+        private const String SQL_UPDATE_PESSOA = @"UPDATE pessoa
+SET nome = @nome,
+fl_status = @fl_status
+where id = @id_pessoa;";
+        private const String SQL_UPDATE_PACIENTE = @"UPDATE paciente
+set fl_status = @fl_status,
+paciente_risco = @paciente_risco,
+fl_obito = @fl_obito,
+id_convenio = @id_convenio
+where id_pessoa = @id;";
+
         private const String SQL_DELETE_PESSOA = @"delete from pessoa where id = @id_pessoa";
         private const String SQL_DELETE_PACIENTE = @"delete from paciente where id = @id_paciente";
 
