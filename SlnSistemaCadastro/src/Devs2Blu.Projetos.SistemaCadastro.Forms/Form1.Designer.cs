@@ -78,7 +78,7 @@
             this.rb_Alterar = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtb_idAlteracao = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lbl_IdAlterar = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtb_idExcluir = new System.Windows.Forms.TextBox();
             this.btn_BuscaPaciente = new System.Windows.Forms.Button();
@@ -413,6 +413,7 @@
             this.btn_Limpar.TabIndex = 9;
             this.btn_Limpar.Text = "Limpar";
             this.btn_Limpar.UseVisualStyleBackColor = true;
+            this.btn_Limpar.Click += new System.EventHandler(this.btn_Limpar_Click);
             // 
             // txtb_Nome
             // 
@@ -585,7 +586,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btn_BuscaPaciente);
-            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.lbl_IdAlterar);
             this.groupBox2.Controls.Add(this.txtb_idAlteracao);
             this.groupBox2.Controls.Add(this.rb_Alterar);
             this.groupBox2.Controls.Add(this.rb_Cadastrar);
@@ -604,14 +605,14 @@
             this.txtb_idAlteracao.TabIndex = 25;
             this.txtb_idAlteracao.Visible = false;
             // 
-            // label9
+            // lbl_IdAlterar
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(153, 18);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(60, 13);
-            this.label9.TabIndex = 26;
-            this.label9.Text = "Id à alterar:";
+            this.lbl_IdAlterar.AutoSize = true;
+            this.lbl_IdAlterar.Location = new System.Drawing.Point(153, 18);
+            this.lbl_IdAlterar.Name = "lbl_IdAlterar";
+            this.lbl_IdAlterar.Size = new System.Drawing.Size(60, 13);
+            this.lbl_IdAlterar.TabIndex = 26;
+            this.lbl_IdAlterar.Text = "Id à alterar:";
             // 
             // label10
             // 
@@ -730,7 +731,7 @@
         private System.Windows.Forms.TextBox txtb_idAlteracao;
         private System.Windows.Forms.TextBox txtb_idExcluir;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lbl_IdAlterar;
         private System.Windows.Forms.Button btn_BuscaPaciente;
     }
 }

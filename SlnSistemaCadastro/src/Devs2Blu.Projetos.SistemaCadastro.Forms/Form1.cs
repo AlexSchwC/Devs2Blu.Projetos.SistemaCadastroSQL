@@ -107,7 +107,7 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
                     paciente.Status = (FlStatus)cbox_StatusPessoa.SelectedItem;
                     var pacienteResult = PacienteRepository.Update(paciente, Int32.Parse(txtb_idAlteracao.Text), conn);
                     endereco.Pessoa = paciente.Pessoa;
-                    //var enderecoResult = EnderecoRepository.UpdateEndereco(endereco, conn);
+                    var enderecoResult = EnderecoRepository.UpdateEndereco(endereco, conn);
                     MessageBox.Show($"Pessoa {paciente.Pessoa.Id} - {paciente.Pessoa.Nome} salvo com sucesso!", "Alteração de Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     PopulaDataGridPessoa();
                 }
@@ -173,6 +173,13 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
             txtb_idAlteracao.Visible = false;
             txtb_idAlteracao.Enabled = false;
             btn_BuscaPaciente.Visible = false;
+            cbox_StatusPessoa.Enabled = false;
+            cbox_StatusPaciente.Enabled = false;
+            cbox_Obito.Enabled = false;
+            masktxtb_CGCCPF.Enabled = true;
+            rbFisica.Enabled = true;
+            rbJuridica.Enabled = true;
+            lbl_IdAlterar.Visible = false;
         }
 
         private void rb_Alterar_CheckedChanged(object sender, EventArgs e)
@@ -180,6 +187,13 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
             txtb_idAlteracao.Visible = true;
             txtb_idAlteracao.Enabled = true;
             btn_BuscaPaciente.Visible = true;
+            cbox_StatusPessoa.Enabled = true;
+            cbox_StatusPaciente.Enabled = true;
+            cbox_Obito.Enabled = true;
+            masktxtb_CGCCPF.Enabled = false;
+            rbFisica.Enabled = false;
+            rbJuridica.Enabled = false;
+            lbl_IdAlterar.Visible = true;
         }
         
         private void btn_BuscaPaciente_Click(object sender, EventArgs e)
@@ -187,7 +201,44 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
             Int32 idBuscar = Int32.Parse(txtb_idAlteracao.Text);
             var pacienteData = PacienteRepository.GetPaciente(idBuscar);
             pacienteData.Read();
-            MessageBox.Show($"{pacienteData.GetString("id")}");
+            var pessoaData = PacienteRepository.GetPessoa(Int32.Parse(pacienteData.GetString("id_pessoa")));
+            pessoaData.Read();
+            var enderecoData = EnderecoRepository.GetEndereco(Int32.Parse(pacienteData.GetString("id_pessoa")));
+            enderecoData.Read();
+            var convenioData = ConvenioRepository.FetchAll();
+
+            txtb_Nome.Text = pessoaData.GetString("nome");
+            masktxtb_CGCCPF.Text = pessoaData.GetString("cgccpf");
+            cbox_StatusPessoa.Text = pessoaData.GetString("fl_status");
+            masktxtb_CEP.Text = enderecoData.GetString("CEP");
+            cbox_UF.Text = enderecoData.GetString("uf");
+            txtb_Cidade.Text = enderecoData.GetString("cidade");
+            txtb_Bairro.Text = enderecoData.GetString("bairro");
+            txtb_Rua.Text = enderecoData.GetString("rua");
+            txtb_Numero.Text = enderecoData.GetString("numero");
+            cbox_StatusPaciente.Text = pacienteData.GetString("fl_status");
+            txtb_Risco.Text = pacienteData.GetString("paciente_risco");
+            cbox_Obito.Text = pacienteData.GetString("fl_obito");
+
+        }
+        private void btn_Limpar_Click(object sender, EventArgs e)
+        {
+            txtb_Nome.Text = "";
+            masktxtb_CGCCPF.Text = "___.___.___-__";
+            cbox_StatusPessoa.Text = "";
+            masktxtb_CEP.Text = "__.___-__";
+            cbox_UF.Text = "";
+            txtb_Cidade.Text = "";
+            txtb_Bairro.Text = "";
+            txtb_Rua.Text = "";
+            txtb_Numero.Text = "";
+            cbox_StatusPaciente.Text = "";
+            txtb_Risco.Text = "";
+            cbox_Convenio.Text = "";
+            cbox_Obito.Text = "";
+            txtb_idExcluir.Text = "";
+            txtb_idAlteracao.Text = "";
+            rb_Cadastrar.Checked = true;
         }
 
         #endregion

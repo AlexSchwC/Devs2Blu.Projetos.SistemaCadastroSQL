@@ -27,16 +27,16 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms.Data
             return endereco;
         }
 
-        public Endereco UpdateEndreco(Endereco endereco, MySqlConnection conn)
+        public Endereco UpdateEndereco(Endereco endereco, MySqlConnection conn)
         {
-            MySqlCommand cmd = new MySqlCommand(SQL_ALTER_ENDERECO, conn);
-            cmd.Parameters.Add("@id_Pessoa", MySqlDbType.Int32).Value = endereco.Pessoa.Id;
-            cmd.Parameters.Add("@CEP", MySqlDbType.VarChar, 15).Value = endereco.CEP;
+            MySqlCommand cmd = new MySqlCommand(SQL_UPDATE_ENDERECO, conn);
+            cmd.Parameters.Add("@cep", MySqlDbType.VarChar, 15).Value = endereco.CEP;
             cmd.Parameters.Add("@rua", MySqlDbType.VarChar, 50).Value = endereco.Rua;
             cmd.Parameters.Add("@numero", MySqlDbType.Int32).Value = endereco.Numero;
             cmd.Parameters.Add("@bairro", MySqlDbType.VarChar, 45).Value = endereco.Bairro;
             cmd.Parameters.Add("@cidade", MySqlDbType.VarChar, 30).Value = endereco.Cidade;
             cmd.Parameters.Add("@uf", MySqlDbType.VarChar, 2).Value = endereco.UF;
+            cmd.Parameters.Add("@id_pessoa", MySqlDbType.Int32).Value = endereco.Pessoa.Id;
             cmd.ExecuteNonQuery();
 
             return endereco;
@@ -58,7 +58,7 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms.Data
             }
         }
 
-        public MySqlDataReader FindEndereco(Int32 id_pessoa)
+        public MySqlDataReader GetEndereco(Int32 id_pessoa)
         {
             MySqlConnection conn = ConnectionMySQL.GetConnection();
             try
@@ -93,9 +93,15 @@ VALUES
 @bairro,
 @cidade,
 @uf)";
-        private const String SQL_SELECT_ENDERECO = @"select * from endereco
+        private const String SQL_SELECT_ENDERECO = @"select * from endereco where id_pessoa = @id_pessoa;";
+        private const String SQL_UPDATE_ENDERECO = @"UPDATE endereco
+set CEP = @cep,
+rua = @rua,
+numero = @numero,
+bairro = @bairro,
+cidade = @cidade,
+uf = @uf
 where id_pessoa = @id_pessoa;";
-        private const String SQL_ALTER_ENDERECO = @"";
         private const String SQL_DELETE_ENDERECO = @"delete from endereco where id_pessoa = @id_pessoa";
 
         #endregion

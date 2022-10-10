@@ -68,7 +68,6 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms.Data
                 cmdPessoa.ExecuteNonQuery();
                 cmdPaciente.ExecuteNonQuery();
 
-
                 return paciente;
             }
             catch (MySqlException myExc)
@@ -98,6 +97,40 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms.Data
             }
         }
 
+        public MySqlDataReader GetPaciente(Int32 id_paciente)
+        {
+            MySqlConnection conn = ConnectionMySQL.GetConnection();
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(SQL_SELECT_PACIENTE, conn);
+                cmd.Parameters.Add("@id_paciente", MySqlDbType.Int32).Value = id_paciente;
+                MySqlDataReader pacienteData = cmd.ExecuteReader();
+                return pacienteData;
+            }
+            catch (MySqlException myExc)
+            {
+                MessageBox.Show(myExc.Message, "Erro de MySQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+        }
+
+        public MySqlDataReader GetPessoa(Int32 id_pessoa)
+        {
+            MySqlConnection conn = ConnectionMySQL.GetConnection();
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(SQL_SELECT_PESSOA, conn);
+                cmd.Parameters.Add("@id_pessoa", MySqlDbType.Int32).Value = id_pessoa;
+                MySqlDataReader pessoaData = cmd.ExecuteReader();
+                return pessoaData;
+            }
+            catch (MySqlException myExc)
+            {
+                MessageBox.Show(myExc.Message, "Erro de MySQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+        }
+
         internal MySqlDataReader GetPessoas()
         {
             MySqlConnection conn = ConnectionMySQL.GetConnection();
@@ -116,27 +149,10 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms.Data
             }
         }
 
-        public MySqlDataReader GetPaciente(Int32 id_pessoa)
-        {
-            MySqlConnection conn = ConnectionMySQL.GetConnection();
-            try
-            {
-                MySqlCommand cmd = new MySqlCommand(SQL_SELECT_PACIENTE, conn);
-                cmd.Parameters.Add("@id_paciente", MySqlDbType.Int32).Value = id_pessoa;
-                MySqlDataReader pacienteData = cmd.ExecuteReader();
-                return pacienteData;
-            }
-            catch (MySqlException myExc)
-            {
-                MessageBox.Show(myExc.Message, "Erro de MySQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                throw;
-            }
-        }
-
         #region SQLs
 
-        private const String SQL_SELECT_PACIENTE = @"select * from paciente
-where id = @id_paciente;";
+        private const String SQL_SELECT_PACIENTE = @"select * from paciente where id = @id_paciente";
+        private const String SQL_SELECT_PESSOA = @"SELECT * from pessoa where id = @id_pessoa";
         private const String SQL_INSERT_PESSOA = @"INSERT INTO pessoa
 (nome,
 cgccpf,
@@ -157,7 +173,6 @@ paciente_risco = @paciente_risco,
 fl_obito = @fl_obito,
 id_convenio = @id_convenio
 where id_pessoa = @id;";
-        private const String SQL_SELECT_PESSOAS = @"SELECT id, nome, cgccpf, fl_status from pessoa";
         private const String SQL_SELECT_PACIENTES = @"select 
 	pa.id as Id_Paciente, 
 	pe.fl_status as 'Status', 
