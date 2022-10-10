@@ -23,7 +23,6 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Models.Model
             Convenio = new Convenio();
             Status = FlStatus.A;
             FlObito = 0;
-            TipoPessoa = TipoPessoa.PF;
         }
 
         public Paciente(Pessoa pessoa, Convenio convenio, int nrProntuario, string pacienteRisco)

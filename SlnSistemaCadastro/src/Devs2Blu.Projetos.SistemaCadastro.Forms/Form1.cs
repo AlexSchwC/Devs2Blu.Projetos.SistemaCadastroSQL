@@ -1,4 +1,5 @@
 ﻿using Devs2Blu.Projetos.SistemaCadastro.Forms.Data;
+using Devs2Blu.Projetos.SistemaCadastro.Models.Enum;
 using Devs2Blu.Projetos.SistemaCadastro.Models.Model;
 using MySql.Data.MySqlClient;
 using System;
@@ -35,11 +36,18 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
             cbbox_Convenio.ValueMember = "id";
         }
 
+        private void PopulaDataGridPessoa()
+        {
+            var listPessoas = PacienteRepository.GetPessoas();
+            grid_Pacientes.DataSource = new BindingSource(listPessoas, null);
+        }
+
         private bool ValidaFormCadastro()
         {
             if (txtb_Nome.Text.Equals("")) { return false; }
             if (masktxtb_CGCCPF.Text.Equals("")) { return false; }
-            //if (cbbox_Convenio.SelectedIndex.Equals(-1)) { return false; }
+            if (cbbox_Convenio.SelectedIndex.Equals(-1)) { return false; }
+            if (txtb_Risco.Text.Equals("")) { return false; }
             //if (masktxtb_CEP.Text.Equals("")) { return false; }
             //if (cbbox_UF.SelectedIndex.Equals(-1)) { return false; }
             //if (txtb_Cidade.Text.Equals("")) { return false; }
@@ -48,6 +56,13 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
             //if (txtb_Numero.Text.Equals("")) { return false; }
 
             return true;
+        }
+
+        private Int32 geraProntuario()
+        {
+            Random rd = new Random();
+            Int32 nrProntuario = Int32.Parse($"{rd.Next(10000, 99999)}{DateTime.Now.Millisecond}");
+            return nrProntuario;
         }
 
         #endregion
@@ -66,6 +81,7 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
             //}
             #endregion
             PopulaComboConvenio();
+            PopulaDataGridPessoa();
         }
 
         private void rbFisica_CheckedChanged(object sender, EventArgs e)
@@ -94,14 +110,19 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
                 paciente.Pessoa.Nome = txtb_Nome.Text;
                 paciente.Pessoa.CGCCPF = masktxtb_CGCCPF.Text;
                 paciente.Convenio.Id = (int)cbbox_Convenio.SelectedValue;
+                paciente.PacienteRisco = txtb_Risco.Text;
+                paciente.NrProntuario = geraProntuario();
+                paciente.TipoPessoa = rbFisica.Checked ? TipoPessoa.PF : TipoPessoa.PF;
                 var pacienteResult = PacienteRepository.Save(paciente);
                 if (pacienteResult.Pessoa.Id > 0)
                 {
                     MessageBox.Show($"Pessoa {paciente.Pessoa.Id} - {paciente.Pessoa.Nome} salvo com sucesso!", "Adicionar Pessoa", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    PopulaDataGridPessoa();
                 }
             }
         }
 
         #endregion
+
     }
 }
