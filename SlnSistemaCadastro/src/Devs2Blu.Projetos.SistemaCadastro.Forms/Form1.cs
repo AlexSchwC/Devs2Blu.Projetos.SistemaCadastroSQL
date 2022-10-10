@@ -77,6 +77,7 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
             {
                 Paciente paciente = new Paciente();
                 Endereco endereco = new Endereco();
+                paciente.Pessoa.Id = Int32.Parse(txtb_idAlteracao.Text);
                 paciente.Pessoa.Nome = txtb_Nome.Text;
                 paciente.Pessoa.CGCCPF = masktxtb_CGCCPF.Text;
                 paciente.Convenio.Id = (int)cbox_Convenio.SelectedValue;
@@ -105,6 +106,11 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
                 } else if (rb_Alterar.Checked)
                 {
                     paciente.Status = (FlStatus)cbox_StatusPessoa.SelectedItem;
+                    Int32 idBuscar = Int32.Parse(txtb_idAlteracao.Text);
+                    //var pacienteData = PacienteRepository.GetPaciente(idBuscar);
+                    //var pessoaData = PacienteRepository.GetPessoa(Int32.Parse(pacienteData.GetString("id_pessoa")));
+                    //pacienteData.Read();
+                    //pessoaData.Read();
                     var pacienteResult = PacienteRepository.Update(paciente, Int32.Parse(txtb_idAlteracao.Text), conn);
                     endereco.Pessoa = paciente.Pessoa;
                     var enderecoResult = EnderecoRepository.UpdateEndereco(endereco, conn);
@@ -221,6 +227,7 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
             cbox_Obito.Text = pacienteData.GetString("fl_obito");
 
         }
+
         private void btn_Limpar_Click(object sender, EventArgs e)
         {
             txtb_Nome.Text = "";
@@ -239,6 +246,11 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
             txtb_idExcluir.Text = "";
             txtb_idAlteracao.Text = "";
             rb_Cadastrar.Checked = true;
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Projeto Sistema Cadastro +Devs2Blu V1.0 \n-Alexandre Schanke da Costa");
         }
 
         #endregion

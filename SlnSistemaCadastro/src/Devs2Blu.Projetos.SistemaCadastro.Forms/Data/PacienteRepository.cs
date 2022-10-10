@@ -56,15 +56,15 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms.Data
             try
             {
                 MySqlCommand cmdPessoa = new MySqlCommand(SQL_UPDATE_PESSOA, conn);
-                cmdPessoa.Parameters.Add("@nome", MySqlDbType.VarChar, 55).Value = paciente.Nome;
+                cmdPessoa.Parameters.Add("@nome", MySqlDbType.VarChar, 55).Value = paciente.Pessoa.Nome;
                 cmdPessoa.Parameters.Add("@fl_status", MySqlDbType.Enum).Value = paciente.Pessoa.Status;
-                cmdPessoa.Parameters.Add("@id", MySqlDbType.Int32).Value = paciente.Pessoa.Id;
+                cmdPessoa.Parameters.Add("@id_pessoa", MySqlDbType.Int32).Value = paciente.Pessoa.Id;
                 MySqlCommand cmdPaciente = new MySqlCommand(SQL_UPDATE_PACIENTE, conn);
                 cmdPaciente.Parameters.Add("@fl_status", MySqlDbType.Enum).Value = paciente.Status;
                 cmdPaciente.Parameters.Add("@paciente_risco", MySqlDbType.VarChar, 10).Value = paciente.PacienteRisco;
                 cmdPaciente.Parameters.Add("@fl_obito", MySqlDbType.Enum).Value = paciente.FlObito;
                 cmdPaciente.Parameters.Add("@id_convenio", MySqlDbType.Int32).Value = paciente.Convenio.Id;
-                cmdPaciente.Parameters.Add("@id_pessoa", MySqlDbType.Int32).Value = idAlterar;
+                cmdPaciente.Parameters.Add("@id", MySqlDbType.Int32).Value = idAlterar;
                 cmdPessoa.ExecuteNonQuery();
                 cmdPaciente.ExecuteNonQuery();
 
@@ -97,13 +97,13 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms.Data
             }
         }
 
-        public MySqlDataReader GetPaciente(Int32 id_paciente)
+        public MySqlDataReader GetPaciente(Int32 id_pessoa)
         {
             MySqlConnection conn = ConnectionMySQL.GetConnection();
             try
             {
                 MySqlCommand cmd = new MySqlCommand(SQL_SELECT_PACIENTE, conn);
-                cmd.Parameters.Add("@id_paciente", MySqlDbType.Int32).Value = id_paciente;
+                cmd.Parameters.Add("@id_pessoa", MySqlDbType.Int32).Value = id_pessoa;
                 MySqlDataReader pacienteData = cmd.ExecuteReader();
                 return pacienteData;
             }
@@ -151,7 +151,7 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms.Data
 
         #region SQLs
 
-        private const String SQL_SELECT_PACIENTE = @"select * from paciente where id = @id_paciente";
+        private const String SQL_SELECT_PACIENTE = @"select * from paciente where id_pessoa = @id_pessoa";
         private const String SQL_SELECT_PESSOA = @"SELECT * from pessoa where id = @id_pessoa";
         private const String SQL_INSERT_PESSOA = @"INSERT INTO pessoa
 (nome,
@@ -166,7 +166,7 @@ VALUES
         private const String SQL_UPDATE_PESSOA = @"UPDATE pessoa
 SET nome = @nome,
 fl_status = @fl_status
-where id = @id;";
+where id = @id_pessoa;";
         private const String SQL_UPDATE_PACIENTE = @"UPDATE paciente
 set fl_status = @fl_status,
 paciente_risco = @paciente_risco,
@@ -174,7 +174,7 @@ fl_obito = @fl_obito,
 id_convenio = @id_convenio
 where id_pessoa = @id;";
         private const String SQL_SELECT_PACIENTES = @"select 
-	pa.id as Id_Paciente, 
+	pe.id as Id_Pessoa, 
 	pe.fl_status as 'Status', 
 	pe.nome as Nome, 
 	pe.cgccpf as CPF, 

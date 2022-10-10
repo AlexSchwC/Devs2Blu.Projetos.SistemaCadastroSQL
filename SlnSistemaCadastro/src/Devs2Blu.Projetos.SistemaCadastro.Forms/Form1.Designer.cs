@@ -31,8 +31,6 @@
             this.cbox_Convenio = new System.Windows.Forms.ComboBox();
             this.lblConvenio = new System.Windows.Forms.Label();
             this.gbox_cadastro = new System.Windows.Forms.GroupBox();
-            this.gbox_Editar = new System.Windows.Forms.GroupBox();
-            this.btn_Exluir = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.cbox_StatusPessoa = new System.Windows.Forms.ComboBox();
             this.gbox_Paciente = new System.Windows.Forms.GroupBox();
@@ -64,11 +62,11 @@
             this.gbBox_rbTipoPessoa = new System.Windows.Forms.GroupBox();
             this.rbJuridica = new System.Windows.Forms.RadioButton();
             this.rbFisica = new System.Windows.Forms.RadioButton();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_Excluir = new System.Windows.Forms.Button();
-            this.btn_Info = new System.Windows.Forms.Button();
+            this.gbox_Editar = new System.Windows.Forms.GroupBox();
+            this.txtb_idExcluir = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btn_Exluir = new System.Windows.Forms.Button();
             this.grid_Pacientes = new System.Windows.Forms.DataGridView();
-            this.gbox_Conteudo = new System.Windows.Forms.GroupBox();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,27 +75,26 @@
             this.rb_Cadastrar = new System.Windows.Forms.RadioButton();
             this.rb_Alterar = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtb_idAlteracao = new System.Windows.Forms.TextBox();
-            this.lbl_IdAlterar = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtb_idExcluir = new System.Windows.Forms.TextBox();
             this.btn_BuscaPaciente = new System.Windows.Forms.Button();
+            this.lbl_IdAlterar = new System.Windows.Forms.Label();
+            this.txtb_idAlteracao = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.gbox_cadastro.SuspendLayout();
-            this.gbox_Editar.SuspendLayout();
             this.gbox_Paciente.SuspendLayout();
             this.gbox_Endereco.SuspendLayout();
             this.gbBox_rbTipoPessoa.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.gbox_Editar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_Pacientes)).BeginInit();
-            this.gbox_Conteudo.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbox_Convenio
             // 
             this.cbox_Convenio.FormattingEnabled = true;
-            this.cbox_Convenio.Location = new System.Drawing.Point(68, 56);
+            this.cbox_Convenio.Location = new System.Drawing.Point(65, 56);
             this.cbox_Convenio.Name = "cbox_Convenio";
             this.cbox_Convenio.Size = new System.Drawing.Size(115, 21);
             this.cbox_Convenio.TabIndex = 0;
@@ -113,50 +110,25 @@
             // 
             // gbox_cadastro
             // 
+            this.gbox_cadastro.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.gbox_cadastro.Controls.Add(this.groupBox1);
             this.gbox_cadastro.Controls.Add(this.gbox_Editar);
-            this.gbox_cadastro.Controls.Add(this.label7);
-            this.gbox_cadastro.Controls.Add(this.cbox_StatusPessoa);
             this.gbox_cadastro.Controls.Add(this.gbox_Paciente);
-            this.gbox_cadastro.Controls.Add(this.masktxtb_CGCCPF);
+            this.gbox_cadastro.Controls.Add(this.groupBox2);
             this.gbox_cadastro.Controls.Add(this.btn_Salvar);
             this.gbox_cadastro.Controls.Add(this.gbox_Endereco);
             this.gbox_cadastro.Controls.Add(this.btn_Limpar);
-            this.gbox_cadastro.Controls.Add(this.txtb_Nome);
-            this.gbox_cadastro.Controls.Add(this.lblCGCCPF);
-            this.gbox_cadastro.Controls.Add(this.llbNome);
-            this.gbox_cadastro.Controls.Add(this.gbBox_rbTipoPessoa);
             this.gbox_cadastro.Location = new System.Drawing.Point(12, 29);
             this.gbox_cadastro.Name = "gbox_cadastro";
-            this.gbox_cadastro.Size = new System.Drawing.Size(708, 329);
+            this.gbox_cadastro.Size = new System.Drawing.Size(1426, 208);
             this.gbox_cadastro.TabIndex = 2;
             this.gbox_cadastro.TabStop = false;
             this.gbox_cadastro.Text = "Formulário de Cadastro";
             // 
-            // gbox_Editar
-            // 
-            this.gbox_Editar.Controls.Add(this.txtb_idExcluir);
-            this.gbox_Editar.Controls.Add(this.label10);
-            this.gbox_Editar.Controls.Add(this.btn_Exluir);
-            this.gbox_Editar.Location = new System.Drawing.Point(422, 217);
-            this.gbox_Editar.Name = "gbox_Editar";
-            this.gbox_Editar.Size = new System.Drawing.Size(220, 100);
-            this.gbox_Editar.TabIndex = 27;
-            this.gbox_Editar.TabStop = false;
-            // 
-            // btn_Exluir
-            // 
-            this.btn_Exluir.Location = new System.Drawing.Point(23, 26);
-            this.btn_Exluir.Name = "btn_Exluir";
-            this.btn_Exluir.Size = new System.Drawing.Size(57, 54);
-            this.btn_Exluir.TabIndex = 2;
-            this.btn_Exluir.Text = "Excluir";
-            this.btn_Exluir.UseVisualStyleBackColor = true;
-            this.btn_Exluir.Click += new System.EventHandler(this.btn_Exluir_Click);
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(238, 70);
+            this.label7.Location = new System.Drawing.Point(227, 57);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(40, 13);
             this.label7.TabIndex = 26;
@@ -166,7 +138,7 @@
             // 
             this.cbox_StatusPessoa.Enabled = false;
             this.cbox_StatusPessoa.FormattingEnabled = true;
-            this.cbox_StatusPessoa.Location = new System.Drawing.Point(281, 67);
+            this.cbox_StatusPessoa.Location = new System.Drawing.Point(270, 54);
             this.cbox_StatusPessoa.Name = "cbox_StatusPessoa";
             this.cbox_StatusPessoa.Size = new System.Drawing.Size(60, 21);
             this.cbox_StatusPessoa.TabIndex = 25;
@@ -181,9 +153,9 @@
             this.gbox_Paciente.Controls.Add(this.lbl_Risco);
             this.gbox_Paciente.Controls.Add(this.lblConvenio);
             this.gbox_Paciente.Controls.Add(this.cbox_Convenio);
-            this.gbox_Paciente.Location = new System.Drawing.Point(369, 22);
+            this.gbox_Paciente.Location = new System.Drawing.Point(732, 19);
             this.gbox_Paciente.Name = "gbox_Paciente";
-            this.gbox_Paciente.Size = new System.Drawing.Size(335, 88);
+            this.gbox_Paciente.Size = new System.Drawing.Size(335, 131);
             this.gbox_Paciente.TabIndex = 25;
             this.gbox_Paciente.TabStop = false;
             this.gbox_Paciente.Text = "Dados Paciente";
@@ -226,7 +198,7 @@
             // 
             this.cbox_StatusPaciente.Enabled = false;
             this.cbox_StatusPaciente.FormattingEnabled = true;
-            this.cbox_StatusPaciente.Location = new System.Drawing.Point(53, 23);
+            this.cbox_StatusPaciente.Location = new System.Drawing.Point(65, 24);
             this.cbox_StatusPaciente.Name = "cbox_StatusPaciente";
             this.cbox_StatusPaciente.Size = new System.Drawing.Size(60, 21);
             this.cbox_StatusPaciente.TabIndex = 18;
@@ -234,7 +206,7 @@
             // lbl_Risco
             // 
             this.lbl_Risco.AutoSize = true;
-            this.lbl_Risco.Location = new System.Drawing.Point(128, 26);
+            this.lbl_Risco.Location = new System.Drawing.Point(132, 26);
             this.lbl_Risco.Name = "lbl_Risco";
             this.lbl_Risco.Size = new System.Drawing.Size(82, 13);
             this.lbl_Risco.TabIndex = 22;
@@ -242,7 +214,7 @@
             // 
             // masktxtb_CGCCPF
             // 
-            this.masktxtb_CGCCPF.Location = new System.Drawing.Point(86, 67);
+            this.masktxtb_CGCCPF.Location = new System.Drawing.Point(75, 54);
             this.masktxtb_CGCCPF.Name = "masktxtb_CGCCPF";
             this.masktxtb_CGCCPF.Size = new System.Drawing.Size(131, 20);
             this.masktxtb_CGCCPF.TabIndex = 18;
@@ -250,7 +222,8 @@
             // 
             // btn_Salvar
             // 
-            this.btn_Salvar.Location = new System.Drawing.Point(17, 281);
+            this.btn_Salvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Salvar.Location = new System.Drawing.Point(15, 160);
             this.btn_Salvar.Name = "btn_Salvar";
             this.btn_Salvar.Size = new System.Drawing.Size(248, 36);
             this.btn_Salvar.TabIndex = 8;
@@ -260,6 +233,7 @@
             // 
             // gbox_Endereco
             // 
+            this.gbox_Endereco.BackColor = System.Drawing.Color.LightGray;
             this.gbox_Endereco.Controls.Add(this.masktxtb_CEP);
             this.gbox_Endereco.Controls.Add(this.txtb_Numero);
             this.gbox_Endereco.Controls.Add(this.txtb_Rua);
@@ -272,9 +246,9 @@
             this.gbox_Endereco.Controls.Add(this.label3);
             this.gbox_Endereco.Controls.Add(this.label2);
             this.gbox_Endereco.Controls.Add(this.label1);
-            this.gbox_Endereco.Location = new System.Drawing.Point(17, 149);
+            this.gbox_Endereco.Location = new System.Drawing.Point(379, 19);
             this.gbox_Endereco.Name = "gbox_Endereco";
-            this.gbox_Endereco.Size = new System.Drawing.Size(336, 122);
+            this.gbox_Endereco.Size = new System.Drawing.Size(336, 131);
             this.gbox_Endereco.TabIndex = 3;
             this.gbox_Endereco.TabStop = false;
             this.gbox_Endereco.Text = "Endereço / Contato";
@@ -407,7 +381,7 @@
             // 
             // btn_Limpar
             // 
-            this.btn_Limpar.Location = new System.Drawing.Point(271, 281);
+            this.btn_Limpar.Location = new System.Drawing.Point(282, 160);
             this.btn_Limpar.Name = "btn_Limpar";
             this.btn_Limpar.Size = new System.Drawing.Size(82, 36);
             this.btn_Limpar.TabIndex = 9;
@@ -417,7 +391,7 @@
             // 
             // txtb_Nome
             // 
-            this.txtb_Nome.Location = new System.Drawing.Point(86, 29);
+            this.txtb_Nome.Location = new System.Drawing.Point(75, 20);
             this.txtb_Nome.Name = "txtb_Nome";
             this.txtb_Nome.Size = new System.Drawing.Size(256, 20);
             this.txtb_Nome.TabIndex = 6;
@@ -425,7 +399,7 @@
             // lblCGCCPF
             // 
             this.lblCGCCPF.AutoSize = true;
-            this.lblCGCCPF.Location = new System.Drawing.Point(28, 70);
+            this.lblCGCCPF.Location = new System.Drawing.Point(17, 57);
             this.lblCGCCPF.Name = "lblCGCCPF";
             this.lblCGCCPF.Size = new System.Drawing.Size(30, 13);
             this.lblCGCCPF.TabIndex = 5;
@@ -434,7 +408,7 @@
             // llbNome
             // 
             this.llbNome.AutoSize = true;
-            this.llbNome.Location = new System.Drawing.Point(28, 32);
+            this.llbNome.Location = new System.Drawing.Point(17, 23);
             this.llbNome.Name = "llbNome";
             this.llbNome.Size = new System.Drawing.Size(38, 13);
             this.llbNome.TabIndex = 4;
@@ -444,7 +418,7 @@
             // 
             this.gbBox_rbTipoPessoa.Controls.Add(this.rbJuridica);
             this.gbBox_rbTipoPessoa.Controls.Add(this.rbFisica);
-            this.gbBox_rbTipoPessoa.Location = new System.Drawing.Point(20, 102);
+            this.gbBox_rbTipoPessoa.Location = new System.Drawing.Point(10, 85);
             this.gbBox_rbTipoPessoa.Name = "gbBox_rbTipoPessoa";
             this.gbBox_rbTipoPessoa.Size = new System.Drawing.Size(146, 36);
             this.gbBox_rbTipoPessoa.TabIndex = 3;
@@ -475,50 +449,55 @@
             this.rbFisica.UseVisualStyleBackColor = true;
             this.rbFisica.CheckedChanged += new System.EventHandler(this.rbFisica_CheckedChanged);
             // 
-            // panel1
+            // gbox_Editar
             // 
-            this.panel1.Controls.Add(this.btn_Excluir);
-            this.panel1.Controls.Add(this.btn_Info);
-            this.panel1.Location = new System.Drawing.Point(12, 388);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(98, 50);
-            this.panel1.TabIndex = 10;
+            this.gbox_Editar.BackColor = System.Drawing.Color.RosyBrown;
+            this.gbox_Editar.Controls.Add(this.txtb_idExcluir);
+            this.gbox_Editar.Controls.Add(this.label10);
+            this.gbox_Editar.Controls.Add(this.btn_Exluir);
+            this.gbox_Editar.Location = new System.Drawing.Point(1078, 99);
+            this.gbox_Editar.Name = "gbox_Editar";
+            this.gbox_Editar.Size = new System.Drawing.Size(338, 51);
+            this.gbox_Editar.TabIndex = 27;
+            this.gbox_Editar.TabStop = false;
+            this.gbox_Editar.Text = "Excluir Registro";
             // 
-            // btn_Excluir
+            // txtb_idExcluir
             // 
-            this.btn_Excluir.Location = new System.Drawing.Point(55, 7);
-            this.btn_Excluir.Name = "btn_Excluir";
-            this.btn_Excluir.Size = new System.Drawing.Size(34, 36);
-            this.btn_Excluir.TabIndex = 1;
-            this.btn_Excluir.UseVisualStyleBackColor = true;
+            this.txtb_idExcluir.Location = new System.Drawing.Point(82, 18);
+            this.txtb_idExcluir.Name = "txtb_idExcluir";
+            this.txtb_idExcluir.Size = new System.Drawing.Size(109, 20);
+            this.txtb_idExcluir.TabIndex = 30;
             // 
-            // btn_Info
+            // label10
             // 
-            this.btn_Info.Location = new System.Drawing.Point(7, 7);
-            this.btn_Info.Name = "btn_Info";
-            this.btn_Info.Size = new System.Drawing.Size(34, 36);
-            this.btn_Info.TabIndex = 0;
-            this.btn_Info.UseVisualStyleBackColor = true;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(8, 21);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(61, 13);
+            this.label10.TabIndex = 30;
+            this.label10.Text = "Id à excluir:";
+            // 
+            // btn_Exluir
+            // 
+            this.btn_Exluir.Location = new System.Drawing.Point(201, 12);
+            this.btn_Exluir.Name = "btn_Exluir";
+            this.btn_Exluir.Size = new System.Drawing.Size(127, 32);
+            this.btn_Exluir.TabIndex = 2;
+            this.btn_Exluir.Text = "Excluir";
+            this.btn_Exluir.UseVisualStyleBackColor = true;
+            this.btn_Exluir.Click += new System.EventHandler(this.btn_Exluir_Click);
             // 
             // grid_Pacientes
             // 
             this.grid_Pacientes.AllowUserToAddRows = false;
             this.grid_Pacientes.AllowUserToOrderColumns = true;
             this.grid_Pacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grid_Pacientes.Location = new System.Drawing.Point(12, 18);
+            this.grid_Pacientes.Location = new System.Drawing.Point(12, 270);
             this.grid_Pacientes.Name = "grid_Pacientes";
             this.grid_Pacientes.ReadOnly = true;
-            this.grid_Pacientes.Size = new System.Drawing.Size(512, 299);
+            this.grid_Pacientes.Size = new System.Drawing.Size(1426, 440);
             this.grid_Pacientes.TabIndex = 0;
-            // 
-            // gbox_Conteudo
-            // 
-            this.gbox_Conteudo.Controls.Add(this.grid_Pacientes);
-            this.gbox_Conteudo.Location = new System.Drawing.Point(730, 27);
-            this.gbox_Conteudo.Name = "gbox_Conteudo";
-            this.gbox_Conteudo.Size = new System.Drawing.Size(638, 331);
-            this.gbox_Conteudo.TabIndex = 11;
-            this.gbox_Conteudo.TabStop = false;
             // 
             // fileToolStripMenuItem
             // 
@@ -547,6 +526,7 @@
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // menuStrip1
             // 
@@ -555,7 +535,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1374, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1450, 24);
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -563,7 +543,7 @@
             // 
             this.rb_Cadastrar.AutoSize = true;
             this.rb_Cadastrar.Checked = true;
-            this.rb_Cadastrar.Location = new System.Drawing.Point(12, 16);
+            this.rb_Cadastrar.Location = new System.Drawing.Point(13, 31);
             this.rb_Cadastrar.Name = "rb_Cadastrar";
             this.rb_Cadastrar.Size = new System.Drawing.Size(70, 17);
             this.rb_Cadastrar.TabIndex = 5;
@@ -575,7 +555,7 @@
             // rb_Alterar
             // 
             this.rb_Alterar.AutoSize = true;
-            this.rb_Alterar.Location = new System.Drawing.Point(88, 16);
+            this.rb_Alterar.Location = new System.Drawing.Point(87, 31);
             this.rb_Alterar.Name = "rb_Alterar";
             this.rb_Alterar.Size = new System.Drawing.Size(55, 17);
             this.rb_Alterar.TabIndex = 29;
@@ -585,70 +565,82 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Moccasin;
             this.groupBox2.Controls.Add(this.btn_BuscaPaciente);
             this.groupBox2.Controls.Add(this.lbl_IdAlterar);
             this.groupBox2.Controls.Add(this.txtb_idAlteracao);
             this.groupBox2.Controls.Add(this.rb_Alterar);
             this.groupBox2.Controls.Add(this.rb_Cadastrar);
-            this.groupBox2.Location = new System.Drawing.Point(138, 387);
+            this.groupBox2.Location = new System.Drawing.Point(1078, 18);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(426, 44);
+            this.groupBox2.Size = new System.Drawing.Size(338, 75);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
-            // 
-            // txtb_idAlteracao
-            // 
-            this.txtb_idAlteracao.Enabled = false;
-            this.txtb_idAlteracao.Location = new System.Drawing.Point(219, 15);
-            this.txtb_idAlteracao.Name = "txtb_idAlteracao";
-            this.txtb_idAlteracao.Size = new System.Drawing.Size(109, 20);
-            this.txtb_idAlteracao.TabIndex = 25;
-            this.txtb_idAlteracao.Visible = false;
-            // 
-            // lbl_IdAlterar
-            // 
-            this.lbl_IdAlterar.AutoSize = true;
-            this.lbl_IdAlterar.Location = new System.Drawing.Point(153, 18);
-            this.lbl_IdAlterar.Name = "lbl_IdAlterar";
-            this.lbl_IdAlterar.Size = new System.Drawing.Size(60, 13);
-            this.lbl_IdAlterar.TabIndex = 26;
-            this.lbl_IdAlterar.Text = "Id à alterar:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(90, 35);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(61, 13);
-            this.label10.TabIndex = 30;
-            this.label10.Text = "Id à excluir:";
-            // 
-            // txtb_idExcluir
-            // 
-            this.txtb_idExcluir.Location = new System.Drawing.Point(93, 51);
-            this.txtb_idExcluir.Name = "txtb_idExcluir";
-            this.txtb_idExcluir.Size = new System.Drawing.Size(109, 20);
-            this.txtb_idExcluir.TabIndex = 30;
+            this.groupBox2.Text = "Alterar Dados";
             // 
             // btn_BuscaPaciente
             // 
-            this.btn_BuscaPaciente.Location = new System.Drawing.Point(339, 13);
+            this.btn_BuscaPaciente.Location = new System.Drawing.Point(219, 42);
             this.btn_BuscaPaciente.Name = "btn_BuscaPaciente";
-            this.btn_BuscaPaciente.Size = new System.Drawing.Size(75, 23);
+            this.btn_BuscaPaciente.Size = new System.Drawing.Size(109, 23);
             this.btn_BuscaPaciente.TabIndex = 14;
             this.btn_BuscaPaciente.Text = "Buscar";
             this.btn_BuscaPaciente.UseVisualStyleBackColor = true;
             this.btn_BuscaPaciente.Visible = false;
             this.btn_BuscaPaciente.Click += new System.EventHandler(this.btn_BuscaPaciente_Click);
             // 
+            // lbl_IdAlterar
+            // 
+            this.lbl_IdAlterar.AutoSize = true;
+            this.lbl_IdAlterar.Location = new System.Drawing.Point(149, 33);
+            this.lbl_IdAlterar.Name = "lbl_IdAlterar";
+            this.lbl_IdAlterar.Size = new System.Drawing.Size(60, 13);
+            this.lbl_IdAlterar.TabIndex = 26;
+            this.lbl_IdAlterar.Text = "Id à alterar:";
+            this.lbl_IdAlterar.Visible = false;
+            // 
+            // txtb_idAlteracao
+            // 
+            this.txtb_idAlteracao.Enabled = false;
+            this.txtb_idAlteracao.Location = new System.Drawing.Point(219, 17);
+            this.txtb_idAlteracao.Name = "txtb_idAlteracao";
+            this.txtb_idAlteracao.Size = new System.Drawing.Size(109, 20);
+            this.txtb_idAlteracao.TabIndex = 25;
+            this.txtb_idAlteracao.Visible = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtb_Nome);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.gbBox_rbTipoPessoa);
+            this.groupBox1.Controls.Add(this.cbox_StatusPessoa);
+            this.groupBox1.Controls.Add(this.llbNome);
+            this.groupBox1.Controls.Add(this.lblCGCCPF);
+            this.groupBox1.Controls.Add(this.masktxtb_CGCCPF);
+            this.groupBox1.Location = new System.Drawing.Point(15, 19);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(349, 131);
+            this.groupBox1.TabIndex = 27;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Dados Pessoa";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(12, 245);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(66, 20);
+            this.label8.TabIndex = 27;
+            this.label8.Text = "Dados:";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1374, 450);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.gbox_Conteudo);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1450, 722);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.grid_Pacientes);
             this.Controls.Add(this.gbox_cadastro);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -656,22 +648,21 @@
             this.Text = "Formulário de Cadastro";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.gbox_cadastro.ResumeLayout(false);
-            this.gbox_cadastro.PerformLayout();
-            this.gbox_Editar.ResumeLayout(false);
-            this.gbox_Editar.PerformLayout();
             this.gbox_Paciente.ResumeLayout(false);
             this.gbox_Paciente.PerformLayout();
             this.gbox_Endereco.ResumeLayout(false);
             this.gbox_Endereco.PerformLayout();
             this.gbBox_rbTipoPessoa.ResumeLayout(false);
             this.gbBox_rbTipoPessoa.PerformLayout();
-            this.panel1.ResumeLayout(false);
+            this.gbox_Editar.ResumeLayout(false);
+            this.gbox_Editar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_Pacientes)).EndInit();
-            this.gbox_Conteudo.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -703,11 +694,7 @@
         private System.Windows.Forms.Button btn_Salvar;
         private System.Windows.Forms.MaskedTextBox masktxtb_CEP;
         private System.Windows.Forms.Button btn_Limpar;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btn_Excluir;
-        private System.Windows.Forms.Button btn_Info;
         private System.Windows.Forms.DataGridView grid_Pacientes;
-        private System.Windows.Forms.GroupBox gbox_Conteudo;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
@@ -733,6 +720,8 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lbl_IdAlterar;
         private System.Windows.Forms.Button btn_BuscaPaciente;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label8;
     }
 }
 
