@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Media.TextFormatting;
 
 namespace Devs2Blu.Projetos.SistemaCadastro.Forms
 {
@@ -103,7 +104,8 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
                         MessageBox.Show($"Pessoa {paciente.Pessoa.Id} - {paciente.Pessoa.Nome} salvo com sucesso!", "Adicionar Pessoa", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         PopulaDataGridPessoa();
                     }
-                } else if (rb_Alterar.Checked)
+                }
+                else if (rb_Alterar.Checked)
                 {
                     paciente.Status = (FlStatus)cbox_StatusPessoa.SelectedItem;
                     Int32 idBuscar = Int32.Parse(txtb_idAlteracao.Text);
@@ -113,7 +115,6 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
                     MessageBox.Show($"Pessoa {paciente.Pessoa.Id} - {paciente.Pessoa.Nome} salvo com sucesso!", "Alteração de Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     PopulaDataGridPessoa();
                 }
-                
             }
         }
 
@@ -153,11 +154,6 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
                 lblCGCCPF.Text = "CNPJ";
                 lblCGCCPF.Visible = true;
             }
-        }
-
-        private void btn_Cadastrar_Click(object sender, EventArgs e)
-        {
-            CadastraAlteraPaciente();
         }
 
         private void btn_Exluir_Click(object sender, EventArgs e)
@@ -224,7 +220,27 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
 
         }
 
-        private void btn_Limpar_Click(object sender, EventArgs e)
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Projeto Sistema Cadastro +Devs2Blu V1.0 \n-Alexandre Schanke da Costa");
+        }
+
+        private void ibtnListPaciente_Click(object sender, EventArgs e)
+        {
+            grid_Pacientes.Visible = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Sistema Hospital para Cadastro de Pacientes.");
+        }
+
+        private void ibtnSalvar_Click(object sender, EventArgs e)
+        {
+            CadastraAlteraPaciente();
+            
+        }
+        private void ibtnLimpar_Click(object sender, EventArgs e)
         {
             txtb_Nome.Text = "";
             masktxtb_CGCCPF.Text = "___.___.___-__";
@@ -242,14 +258,71 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
             txtb_idExcluir.Text = "";
             txtb_idAlteracao.Text = "";
             rb_Cadastrar.Checked = true;
+
+            /* txtb_Nome.Clear();
+             masktxtb_CGCCPF.Clear();
+             cbox_StatusPessoa.Text = "";
+             masktxtb_CEP.Clear();
+             cbox_UF.Text = "";
+             txtb_Cidade.Clear();
+             txtb_Bairro.Clear();
+             txtb_Rua.Clear();
+             txtb_Numero.Clear();
+             cbox_StatusPaciente.Text = "";
+             txtb_Risco.Clear();
+             cbox_Convenio.Text = "";
+             cbox_Obito.Text = "";
+             txtb_idExcluir.Clear();
+             txtb_idAlteracao.Clear();
+             rb_Cadastrar.Checked = true;*/
+
+        }
+        private void ibtnInfo_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Cadastro Hospitalar de Pacientes");
+        }
+        private void ibtnInfo_MouseHover(object sender, EventArgs e)
+        {
+           
+            ibtnInfo.BackColor = Color.DarkTurquoise;
+        }
+        private void ibtnInfo_MouseLeave(object sender, EventArgs e)
+        {
+
+            ibtnInfo.BackColor = Color.White;
+        }
+        private void ibtnSalvar_MouseHover(object sender, EventArgs e)
+        {
+            ibtnSalvar.BackColor = Color.DarkTurquoise;
         }
 
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ibtnSalvar_MouseLeave(object sender, EventArgs e)
         {
-            MessageBox.Show("Projeto Sistema Cadastro +Devs2Blu V1.0 \n-Alexandre Schanke da Costa");
+            ibtnSalvar.BackColor = Color.White;
+        }
+
+        private void ibtnLimpar_MouseHover(object sender, EventArgs e)
+        {
+            ibtnLimpar.BackColor = Color.DarkTurquoise;
+        }
+
+        private void ibtnLimpar_MouseLeave(object sender, EventArgs e)
+        {
+            ibtnLimpar.BackColor = Color.White;
+        }
+
+        private void ibtnListPaciente_MouseHover(object sender, EventArgs e)
+        {
+            ibtnListPaciente.BackColor = Color.DarkTurquoise;
+        }
+
+        private void ibtnListPaciente_MouseLeave(object sender, EventArgs e)
+        {
+            ibtnListPaciente.BackColor = Color.White;
         }
 
         #endregion
+
 
     }
 }

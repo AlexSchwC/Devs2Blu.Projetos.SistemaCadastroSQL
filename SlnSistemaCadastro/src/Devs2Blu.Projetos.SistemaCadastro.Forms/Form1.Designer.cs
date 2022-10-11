@@ -31,8 +31,20 @@
             this.cbox_Convenio = new System.Windows.Forms.ComboBox();
             this.lblConvenio = new System.Windows.Forms.Label();
             this.gbox_cadastro = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtb_Nome = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.gbBox_rbTipoPessoa = new System.Windows.Forms.GroupBox();
+            this.rbJuridica = new System.Windows.Forms.RadioButton();
+            this.rbFisica = new System.Windows.Forms.RadioButton();
             this.cbox_StatusPessoa = new System.Windows.Forms.ComboBox();
+            this.llbNome = new System.Windows.Forms.Label();
+            this.lblCGCCPF = new System.Windows.Forms.Label();
+            this.masktxtb_CGCCPF = new System.Windows.Forms.MaskedTextBox();
+            this.gbox_Editar = new System.Windows.Forms.GroupBox();
+            this.txtb_idExcluir = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btn_Exluir = new System.Windows.Forms.Button();
             this.gbox_Paciente = new System.Windows.Forms.GroupBox();
             this.txtb_Risco = new System.Windows.Forms.TextBox();
             this.cbox_Obito = new System.Windows.Forms.ComboBox();
@@ -40,8 +52,12 @@
             this.lbl_Obito = new System.Windows.Forms.Label();
             this.cbox_StatusPaciente = new System.Windows.Forms.ComboBox();
             this.lbl_Risco = new System.Windows.Forms.Label();
-            this.masktxtb_CGCCPF = new System.Windows.Forms.MaskedTextBox();
-            this.btn_Salvar = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_BuscaPaciente = new System.Windows.Forms.Button();
+            this.lbl_IdAlterar = new System.Windows.Forms.Label();
+            this.txtb_idAlteracao = new System.Windows.Forms.TextBox();
+            this.rb_Alterar = new System.Windows.Forms.RadioButton();
+            this.rb_Cadastrar = new System.Windows.Forms.RadioButton();
             this.gbox_Endereco = new System.Windows.Forms.GroupBox();
             this.masktxtb_CEP = new System.Windows.Forms.MaskedTextBox();
             this.txtb_Numero = new System.Windows.Forms.TextBox();
@@ -55,40 +71,29 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_Limpar = new System.Windows.Forms.Button();
-            this.txtb_Nome = new System.Windows.Forms.TextBox();
-            this.lblCGCCPF = new System.Windows.Forms.Label();
-            this.llbNome = new System.Windows.Forms.Label();
-            this.gbBox_rbTipoPessoa = new System.Windows.Forms.GroupBox();
-            this.rbJuridica = new System.Windows.Forms.RadioButton();
-            this.rbFisica = new System.Windows.Forms.RadioButton();
-            this.gbox_Editar = new System.Windows.Forms.GroupBox();
-            this.txtb_idExcluir = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.btn_Exluir = new System.Windows.Forms.Button();
             this.grid_Pacientes = new System.Windows.Forms.DataGridView();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.rb_Cadastrar = new System.Windows.Forms.RadioButton();
-            this.rb_Alterar = new System.Windows.Forms.RadioButton();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btn_BuscaPaciente = new System.Windows.Forms.Button();
-            this.lbl_IdAlterar = new System.Windows.Forms.Label();
-            this.txtb_idAlteracao = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.ibtnSalvar = new FontAwesome.Sharp.IconButton();
+            this.ibtnListPaciente = new FontAwesome.Sharp.IconButton();
+            this.ibtnInfo = new FontAwesome.Sharp.IconButton();
+            this.ibtnLimpar = new FontAwesome.Sharp.IconButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbox_cadastro.SuspendLayout();
-            this.gbox_Paciente.SuspendLayout();
-            this.gbox_Endereco.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.gbBox_rbTipoPessoa.SuspendLayout();
             this.gbox_Editar.SuspendLayout();
+            this.gbox_Paciente.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.gbox_Endereco.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_Pacientes)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // cbox_Convenio
@@ -110,20 +115,42 @@
             // 
             // gbox_cadastro
             // 
-            this.gbox_cadastro.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.gbox_cadastro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(204)))));
             this.gbox_cadastro.Controls.Add(this.groupBox1);
             this.gbox_cadastro.Controls.Add(this.gbox_Editar);
             this.gbox_cadastro.Controls.Add(this.gbox_Paciente);
             this.gbox_cadastro.Controls.Add(this.groupBox2);
-            this.gbox_cadastro.Controls.Add(this.btn_Salvar);
             this.gbox_cadastro.Controls.Add(this.gbox_Endereco);
-            this.gbox_cadastro.Controls.Add(this.btn_Limpar);
-            this.gbox_cadastro.Location = new System.Drawing.Point(12, 29);
+            this.gbox_cadastro.Location = new System.Drawing.Point(225, 38);
             this.gbox_cadastro.Name = "gbox_cadastro";
-            this.gbox_cadastro.Size = new System.Drawing.Size(1426, 208);
+            this.gbox_cadastro.Size = new System.Drawing.Size(1525, 319);
             this.gbox_cadastro.TabIndex = 2;
             this.gbox_cadastro.TabStop = false;
             this.gbox_cadastro.Text = "Formulário de Cadastro";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.txtb_Nome);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.gbBox_rbTipoPessoa);
+            this.groupBox1.Controls.Add(this.cbox_StatusPessoa);
+            this.groupBox1.Controls.Add(this.llbNome);
+            this.groupBox1.Controls.Add(this.lblCGCCPF);
+            this.groupBox1.Controls.Add(this.masktxtb_CGCCPF);
+            this.groupBox1.Location = new System.Drawing.Point(123, 32);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(349, 131);
+            this.groupBox1.TabIndex = 27;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Dados Pessoa";
+            // 
+            // txtb_Nome
+            // 
+            this.txtb_Nome.Location = new System.Drawing.Point(75, 20);
+            this.txtb_Nome.Name = "txtb_Nome";
+            this.txtb_Nome.Size = new System.Drawing.Size(256, 20);
+            this.txtb_Nome.TabIndex = 6;
             // 
             // label7
             // 
@@ -134,6 +161,41 @@
             this.label7.TabIndex = 26;
             this.label7.Text = "Status:";
             // 
+            // gbBox_rbTipoPessoa
+            // 
+            this.gbBox_rbTipoPessoa.Controls.Add(this.rbJuridica);
+            this.gbBox_rbTipoPessoa.Controls.Add(this.rbFisica);
+            this.gbBox_rbTipoPessoa.Location = new System.Drawing.Point(10, 85);
+            this.gbBox_rbTipoPessoa.Name = "gbBox_rbTipoPessoa";
+            this.gbBox_rbTipoPessoa.Size = new System.Drawing.Size(146, 36);
+            this.gbBox_rbTipoPessoa.TabIndex = 3;
+            this.gbBox_rbTipoPessoa.TabStop = false;
+            this.gbBox_rbTipoPessoa.Text = "Tipo Pessoa";
+            // 
+            // rbJuridica
+            // 
+            this.rbJuridica.AutoSize = true;
+            this.rbJuridica.Location = new System.Drawing.Point(75, 14);
+            this.rbJuridica.Name = "rbJuridica";
+            this.rbJuridica.Size = new System.Drawing.Size(63, 17);
+            this.rbJuridica.TabIndex = 4;
+            this.rbJuridica.Text = "Jurídica";
+            this.rbJuridica.UseVisualStyleBackColor = true;
+            this.rbJuridica.CheckedChanged += new System.EventHandler(this.rbJuridica_CheckedChanged);
+            // 
+            // rbFisica
+            // 
+            this.rbFisica.AutoSize = true;
+            this.rbFisica.Checked = true;
+            this.rbFisica.Location = new System.Drawing.Point(12, 14);
+            this.rbFisica.Name = "rbFisica";
+            this.rbFisica.Size = new System.Drawing.Size(54, 17);
+            this.rbFisica.TabIndex = 3;
+            this.rbFisica.TabStop = true;
+            this.rbFisica.Text = "Física";
+            this.rbFisica.UseVisualStyleBackColor = true;
+            this.rbFisica.CheckedChanged += new System.EventHandler(this.rbFisica_CheckedChanged);
+            // 
             // cbox_StatusPessoa
             // 
             this.cbox_StatusPessoa.Enabled = false;
@@ -143,8 +205,74 @@
             this.cbox_StatusPessoa.Size = new System.Drawing.Size(60, 21);
             this.cbox_StatusPessoa.TabIndex = 25;
             // 
+            // llbNome
+            // 
+            this.llbNome.AutoSize = true;
+            this.llbNome.Location = new System.Drawing.Point(17, 23);
+            this.llbNome.Name = "llbNome";
+            this.llbNome.Size = new System.Drawing.Size(38, 13);
+            this.llbNome.TabIndex = 4;
+            this.llbNome.Text = "Nome:";
+            // 
+            // lblCGCCPF
+            // 
+            this.lblCGCCPF.AutoSize = true;
+            this.lblCGCCPF.Location = new System.Drawing.Point(17, 57);
+            this.lblCGCCPF.Name = "lblCGCCPF";
+            this.lblCGCCPF.Size = new System.Drawing.Size(30, 13);
+            this.lblCGCCPF.TabIndex = 5;
+            this.lblCGCCPF.Text = "CPF:";
+            // 
+            // masktxtb_CGCCPF
+            // 
+            this.masktxtb_CGCCPF.Location = new System.Drawing.Point(75, 54);
+            this.masktxtb_CGCCPF.Name = "masktxtb_CGCCPF";
+            this.masktxtb_CGCCPF.Size = new System.Drawing.Size(131, 20);
+            this.masktxtb_CGCCPF.TabIndex = 18;
+            this.masktxtb_CGCCPF.Text = "__.___-__";
+            // 
+            // gbox_Editar
+            // 
+            this.gbox_Editar.BackColor = System.Drawing.Color.White;
+            this.gbox_Editar.Controls.Add(this.txtb_idExcluir);
+            this.gbox_Editar.Controls.Add(this.label10);
+            this.gbox_Editar.Controls.Add(this.btn_Exluir);
+            this.gbox_Editar.Location = new System.Drawing.Point(123, 215);
+            this.gbox_Editar.Name = "gbox_Editar";
+            this.gbox_Editar.Size = new System.Drawing.Size(349, 75);
+            this.gbox_Editar.TabIndex = 27;
+            this.gbox_Editar.TabStop = false;
+            this.gbox_Editar.Text = "Excluir Registro";
+            // 
+            // txtb_idExcluir
+            // 
+            this.txtb_idExcluir.Location = new System.Drawing.Point(82, 18);
+            this.txtb_idExcluir.Name = "txtb_idExcluir";
+            this.txtb_idExcluir.Size = new System.Drawing.Size(109, 20);
+            this.txtb_idExcluir.TabIndex = 30;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(8, 21);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(61, 13);
+            this.label10.TabIndex = 30;
+            this.label10.Text = "Id à excluir:";
+            // 
+            // btn_Exluir
+            // 
+            this.btn_Exluir.Location = new System.Drawing.Point(201, 12);
+            this.btn_Exluir.Name = "btn_Exluir";
+            this.btn_Exluir.Size = new System.Drawing.Size(127, 32);
+            this.btn_Exluir.TabIndex = 2;
+            this.btn_Exluir.Text = "Excluir";
+            this.btn_Exluir.UseVisualStyleBackColor = true;
+            this.btn_Exluir.Click += new System.EventHandler(this.btn_Exluir_Click);
+            // 
             // gbox_Paciente
             // 
+            this.gbox_Paciente.BackColor = System.Drawing.Color.White;
             this.gbox_Paciente.Controls.Add(this.txtb_Risco);
             this.gbox_Paciente.Controls.Add(this.cbox_Obito);
             this.gbox_Paciente.Controls.Add(this.lbl_Status);
@@ -153,7 +281,7 @@
             this.gbox_Paciente.Controls.Add(this.lbl_Risco);
             this.gbox_Paciente.Controls.Add(this.lblConvenio);
             this.gbox_Paciente.Controls.Add(this.cbox_Convenio);
-            this.gbox_Paciente.Location = new System.Drawing.Point(732, 19);
+            this.gbox_Paciente.Location = new System.Drawing.Point(1076, 32);
             this.gbox_Paciente.Name = "gbox_Paciente";
             this.gbox_Paciente.Size = new System.Drawing.Size(335, 131);
             this.gbox_Paciente.TabIndex = 25;
@@ -212,28 +340,78 @@
             this.lbl_Risco.TabIndex = 22;
             this.lbl_Risco.Text = "Paciente Risco:";
             // 
-            // masktxtb_CGCCPF
+            // groupBox2
             // 
-            this.masktxtb_CGCCPF.Location = new System.Drawing.Point(75, 54);
-            this.masktxtb_CGCCPF.Name = "masktxtb_CGCCPF";
-            this.masktxtb_CGCCPF.Size = new System.Drawing.Size(131, 20);
-            this.masktxtb_CGCCPF.TabIndex = 18;
-            this.masktxtb_CGCCPF.Text = "___.___.___-__";
+            this.groupBox2.BackColor = System.Drawing.Color.White;
+            this.groupBox2.Controls.Add(this.btn_BuscaPaciente);
+            this.groupBox2.Controls.Add(this.lbl_IdAlterar);
+            this.groupBox2.Controls.Add(this.txtb_idAlteracao);
+            this.groupBox2.Controls.Add(this.rb_Alterar);
+            this.groupBox2.Controls.Add(this.rb_Cadastrar);
+            this.groupBox2.Location = new System.Drawing.Point(606, 215);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(338, 75);
+            this.groupBox2.TabIndex = 13;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Alterar Dados";
             // 
-            // btn_Salvar
+            // btn_BuscaPaciente
             // 
-            this.btn_Salvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Salvar.Location = new System.Drawing.Point(15, 160);
-            this.btn_Salvar.Name = "btn_Salvar";
-            this.btn_Salvar.Size = new System.Drawing.Size(248, 36);
-            this.btn_Salvar.TabIndex = 8;
-            this.btn_Salvar.Text = "Salvar";
-            this.btn_Salvar.UseVisualStyleBackColor = true;
-            this.btn_Salvar.Click += new System.EventHandler(this.btn_Cadastrar_Click);
+            this.btn_BuscaPaciente.Location = new System.Drawing.Point(219, 42);
+            this.btn_BuscaPaciente.Name = "btn_BuscaPaciente";
+            this.btn_BuscaPaciente.Size = new System.Drawing.Size(109, 23);
+            this.btn_BuscaPaciente.TabIndex = 14;
+            this.btn_BuscaPaciente.Text = "Buscar";
+            this.btn_BuscaPaciente.UseVisualStyleBackColor = true;
+            this.btn_BuscaPaciente.Visible = false;
+            this.btn_BuscaPaciente.Click += new System.EventHandler(this.btn_BuscaPaciente_Click);
+            // 
+            // lbl_IdAlterar
+            // 
+            this.lbl_IdAlterar.AutoSize = true;
+            this.lbl_IdAlterar.Location = new System.Drawing.Point(149, 33);
+            this.lbl_IdAlterar.Name = "lbl_IdAlterar";
+            this.lbl_IdAlterar.Size = new System.Drawing.Size(60, 13);
+            this.lbl_IdAlterar.TabIndex = 26;
+            this.lbl_IdAlterar.Text = "Id à alterar:";
+            this.lbl_IdAlterar.Visible = false;
+            // 
+            // txtb_idAlteracao
+            // 
+            this.txtb_idAlteracao.Enabled = false;
+            this.txtb_idAlteracao.Location = new System.Drawing.Point(219, 17);
+            this.txtb_idAlteracao.Name = "txtb_idAlteracao";
+            this.txtb_idAlteracao.Size = new System.Drawing.Size(109, 20);
+            this.txtb_idAlteracao.TabIndex = 25;
+            this.txtb_idAlteracao.Visible = false;
+            // 
+            // rb_Alterar
+            // 
+            this.rb_Alterar.AutoSize = true;
+            this.rb_Alterar.Location = new System.Drawing.Point(87, 31);
+            this.rb_Alterar.Name = "rb_Alterar";
+            this.rb_Alterar.Size = new System.Drawing.Size(55, 17);
+            this.rb_Alterar.TabIndex = 29;
+            this.rb_Alterar.Text = "Alterar";
+            this.rb_Alterar.UseVisualStyleBackColor = true;
+            this.rb_Alterar.CheckedChanged += new System.EventHandler(this.rb_Alterar_CheckedChanged);
+            // 
+            // rb_Cadastrar
+            // 
+            this.rb_Cadastrar.AutoSize = true;
+            this.rb_Cadastrar.Checked = true;
+            this.rb_Cadastrar.Location = new System.Drawing.Point(13, 31);
+            this.rb_Cadastrar.Name = "rb_Cadastrar";
+            this.rb_Cadastrar.Size = new System.Drawing.Size(70, 17);
+            this.rb_Cadastrar.TabIndex = 5;
+            this.rb_Cadastrar.TabStop = true;
+            this.rb_Cadastrar.Text = "Cadastrar";
+            this.rb_Cadastrar.UseVisualStyleBackColor = true;
+            this.rb_Cadastrar.CheckedChanged += new System.EventHandler(this.rb_Cadastrar_CheckedChanged);
             // 
             // gbox_Endereco
             // 
-            this.gbox_Endereco.BackColor = System.Drawing.Color.LightGray;
+            this.gbox_Endereco.BackColor = System.Drawing.Color.White;
             this.gbox_Endereco.Controls.Add(this.masktxtb_CEP);
             this.gbox_Endereco.Controls.Add(this.txtb_Numero);
             this.gbox_Endereco.Controls.Add(this.txtb_Rua);
@@ -246,9 +424,9 @@
             this.gbox_Endereco.Controls.Add(this.label3);
             this.gbox_Endereco.Controls.Add(this.label2);
             this.gbox_Endereco.Controls.Add(this.label1);
-            this.gbox_Endereco.Location = new System.Drawing.Point(379, 19);
+            this.gbox_Endereco.Location = new System.Drawing.Point(606, 32);
             this.gbox_Endereco.Name = "gbox_Endereco";
-            this.gbox_Endereco.Size = new System.Drawing.Size(336, 131);
+            this.gbox_Endereco.Size = new System.Drawing.Size(343, 131);
             this.gbox_Endereco.TabIndex = 3;
             this.gbox_Endereco.TabStop = false;
             this.gbox_Endereco.Text = "Endereço / Contato";
@@ -379,125 +557,18 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "CEP:";
             // 
-            // btn_Limpar
-            // 
-            this.btn_Limpar.Location = new System.Drawing.Point(282, 160);
-            this.btn_Limpar.Name = "btn_Limpar";
-            this.btn_Limpar.Size = new System.Drawing.Size(82, 36);
-            this.btn_Limpar.TabIndex = 9;
-            this.btn_Limpar.Text = "Limpar";
-            this.btn_Limpar.UseVisualStyleBackColor = true;
-            this.btn_Limpar.Click += new System.EventHandler(this.btn_Limpar_Click);
-            // 
-            // txtb_Nome
-            // 
-            this.txtb_Nome.Location = new System.Drawing.Point(75, 20);
-            this.txtb_Nome.Name = "txtb_Nome";
-            this.txtb_Nome.Size = new System.Drawing.Size(256, 20);
-            this.txtb_Nome.TabIndex = 6;
-            // 
-            // lblCGCCPF
-            // 
-            this.lblCGCCPF.AutoSize = true;
-            this.lblCGCCPF.Location = new System.Drawing.Point(17, 57);
-            this.lblCGCCPF.Name = "lblCGCCPF";
-            this.lblCGCCPF.Size = new System.Drawing.Size(30, 13);
-            this.lblCGCCPF.TabIndex = 5;
-            this.lblCGCCPF.Text = "CPF:";
-            // 
-            // llbNome
-            // 
-            this.llbNome.AutoSize = true;
-            this.llbNome.Location = new System.Drawing.Point(17, 23);
-            this.llbNome.Name = "llbNome";
-            this.llbNome.Size = new System.Drawing.Size(38, 13);
-            this.llbNome.TabIndex = 4;
-            this.llbNome.Text = "Nome:";
-            // 
-            // gbBox_rbTipoPessoa
-            // 
-            this.gbBox_rbTipoPessoa.Controls.Add(this.rbJuridica);
-            this.gbBox_rbTipoPessoa.Controls.Add(this.rbFisica);
-            this.gbBox_rbTipoPessoa.Location = new System.Drawing.Point(10, 85);
-            this.gbBox_rbTipoPessoa.Name = "gbBox_rbTipoPessoa";
-            this.gbBox_rbTipoPessoa.Size = new System.Drawing.Size(146, 36);
-            this.gbBox_rbTipoPessoa.TabIndex = 3;
-            this.gbBox_rbTipoPessoa.TabStop = false;
-            this.gbBox_rbTipoPessoa.Text = "Tipo Pessoa";
-            // 
-            // rbJuridica
-            // 
-            this.rbJuridica.AutoSize = true;
-            this.rbJuridica.Location = new System.Drawing.Point(75, 14);
-            this.rbJuridica.Name = "rbJuridica";
-            this.rbJuridica.Size = new System.Drawing.Size(63, 17);
-            this.rbJuridica.TabIndex = 4;
-            this.rbJuridica.Text = "Jurídica";
-            this.rbJuridica.UseVisualStyleBackColor = true;
-            this.rbJuridica.CheckedChanged += new System.EventHandler(this.rbJuridica_CheckedChanged);
-            // 
-            // rbFisica
-            // 
-            this.rbFisica.AutoSize = true;
-            this.rbFisica.Checked = true;
-            this.rbFisica.Location = new System.Drawing.Point(12, 14);
-            this.rbFisica.Name = "rbFisica";
-            this.rbFisica.Size = new System.Drawing.Size(54, 17);
-            this.rbFisica.TabIndex = 3;
-            this.rbFisica.TabStop = true;
-            this.rbFisica.Text = "Física";
-            this.rbFisica.UseVisualStyleBackColor = true;
-            this.rbFisica.CheckedChanged += new System.EventHandler(this.rbFisica_CheckedChanged);
-            // 
-            // gbox_Editar
-            // 
-            this.gbox_Editar.BackColor = System.Drawing.Color.RosyBrown;
-            this.gbox_Editar.Controls.Add(this.txtb_idExcluir);
-            this.gbox_Editar.Controls.Add(this.label10);
-            this.gbox_Editar.Controls.Add(this.btn_Exluir);
-            this.gbox_Editar.Location = new System.Drawing.Point(1078, 99);
-            this.gbox_Editar.Name = "gbox_Editar";
-            this.gbox_Editar.Size = new System.Drawing.Size(338, 51);
-            this.gbox_Editar.TabIndex = 27;
-            this.gbox_Editar.TabStop = false;
-            this.gbox_Editar.Text = "Excluir Registro";
-            // 
-            // txtb_idExcluir
-            // 
-            this.txtb_idExcluir.Location = new System.Drawing.Point(82, 18);
-            this.txtb_idExcluir.Name = "txtb_idExcluir";
-            this.txtb_idExcluir.Size = new System.Drawing.Size(109, 20);
-            this.txtb_idExcluir.TabIndex = 30;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(8, 21);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(61, 13);
-            this.label10.TabIndex = 30;
-            this.label10.Text = "Id à excluir:";
-            // 
-            // btn_Exluir
-            // 
-            this.btn_Exluir.Location = new System.Drawing.Point(201, 12);
-            this.btn_Exluir.Name = "btn_Exluir";
-            this.btn_Exluir.Size = new System.Drawing.Size(127, 32);
-            this.btn_Exluir.TabIndex = 2;
-            this.btn_Exluir.Text = "Excluir";
-            this.btn_Exluir.UseVisualStyleBackColor = true;
-            this.btn_Exluir.Click += new System.EventHandler(this.btn_Exluir_Click);
-            // 
             // grid_Pacientes
             // 
             this.grid_Pacientes.AllowUserToAddRows = false;
             this.grid_Pacientes.AllowUserToOrderColumns = true;
+            this.grid_Pacientes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(204)))));
             this.grid_Pacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grid_Pacientes.Location = new System.Drawing.Point(12, 270);
+            this.grid_Pacientes.Location = new System.Drawing.Point(225, 350);
             this.grid_Pacientes.Name = "grid_Pacientes";
             this.grid_Pacientes.ReadOnly = true;
-            this.grid_Pacientes.Size = new System.Drawing.Size(1426, 440);
+            this.grid_Pacientes.Size = new System.Drawing.Size(1525, 334);
             this.grid_Pacientes.TabIndex = 0;
+            this.grid_Pacientes.Visible = false;
             // 
             // fileToolStripMenuItem
             // 
@@ -535,111 +606,131 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1450, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1750, 24);
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // rb_Cadastrar
+            // panel1
             // 
-            this.rb_Cadastrar.AutoSize = true;
-            this.rb_Cadastrar.Checked = true;
-            this.rb_Cadastrar.Location = new System.Drawing.Point(13, 31);
-            this.rb_Cadastrar.Name = "rb_Cadastrar";
-            this.rb_Cadastrar.Size = new System.Drawing.Size(70, 17);
-            this.rb_Cadastrar.TabIndex = 5;
-            this.rb_Cadastrar.TabStop = true;
-            this.rb_Cadastrar.Text = "Cadastrar";
-            this.rb_Cadastrar.UseVisualStyleBackColor = true;
-            this.rb_Cadastrar.CheckedChanged += new System.EventHandler(this.rb_Cadastrar_CheckedChanged);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(204)))));
+            this.panel1.Controls.Add(this.ibtnSalvar);
+            this.panel1.Controls.Add(this.ibtnListPaciente);
+            this.panel1.Controls.Add(this.ibtnInfo);
+            this.panel1.Controls.Add(this.ibtnLimpar);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 24);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 683);
+            this.panel1.TabIndex = 28;
             // 
-            // rb_Alterar
+            // ibtnSalvar
             // 
-            this.rb_Alterar.AutoSize = true;
-            this.rb_Alterar.Location = new System.Drawing.Point(87, 31);
-            this.rb_Alterar.Name = "rb_Alterar";
-            this.rb_Alterar.Size = new System.Drawing.Size(55, 17);
-            this.rb_Alterar.TabIndex = 29;
-            this.rb_Alterar.Text = "Alterar";
-            this.rb_Alterar.UseVisualStyleBackColor = true;
-            this.rb_Alterar.CheckedChanged += new System.EventHandler(this.rb_Alterar_CheckedChanged);
+            this.ibtnSalvar.BackColor = System.Drawing.Color.White;
+            this.ibtnSalvar.FlatAppearance.BorderSize = 0;
+            this.ibtnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibtnSalvar.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
+            this.ibtnSalvar.IconColor = System.Drawing.Color.Black;
+            this.ibtnSalvar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnSalvar.IconSize = 20;
+            this.ibtnSalvar.Location = new System.Drawing.Point(-3, 326);
+            this.ibtnSalvar.Name = "ibtnSalvar";
+            this.ibtnSalvar.Size = new System.Drawing.Size(206, 36);
+            this.ibtnSalvar.TabIndex = 33;
+            this.ibtnSalvar.Text = "Cadastrar";
+            this.ibtnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibtnSalvar.UseVisualStyleBackColor = false;
+            this.ibtnSalvar.Click += new System.EventHandler(this.ibtnSalvar_Click);
+            this.ibtnSalvar.MouseLeave += new System.EventHandler(this.ibtnSalvar_MouseLeave);
+            this.ibtnSalvar.MouseHover += new System.EventHandler(this.ibtnSalvar_MouseHover);
             // 
-            // groupBox2
+            // ibtnListPaciente
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.Moccasin;
-            this.groupBox2.Controls.Add(this.btn_BuscaPaciente);
-            this.groupBox2.Controls.Add(this.lbl_IdAlterar);
-            this.groupBox2.Controls.Add(this.txtb_idAlteracao);
-            this.groupBox2.Controls.Add(this.rb_Alterar);
-            this.groupBox2.Controls.Add(this.rb_Cadastrar);
-            this.groupBox2.Location = new System.Drawing.Point(1078, 18);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(338, 75);
-            this.groupBox2.TabIndex = 13;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Alterar Dados";
+            this.ibtnListPaciente.BackColor = System.Drawing.Color.White;
+            this.ibtnListPaciente.FlatAppearance.BorderSize = 0;
+            this.ibtnListPaciente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnListPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibtnListPaciente.IconChar = FontAwesome.Sharp.IconChar.ListAlt;
+            this.ibtnListPaciente.IconColor = System.Drawing.Color.Black;
+            this.ibtnListPaciente.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnListPaciente.IconSize = 20;
+            this.ibtnListPaciente.Location = new System.Drawing.Point(-3, 410);
+            this.ibtnListPaciente.Name = "ibtnListPaciente";
+            this.ibtnListPaciente.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.ibtnListPaciente.Size = new System.Drawing.Size(206, 36);
+            this.ibtnListPaciente.TabIndex = 32;
+            this.ibtnListPaciente.Text = "Lista Pacientes";
+            this.ibtnListPaciente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnListPaciente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibtnListPaciente.UseVisualStyleBackColor = false;
+            this.ibtnListPaciente.Click += new System.EventHandler(this.ibtnListPaciente_Click);
+            this.ibtnListPaciente.MouseLeave += new System.EventHandler(this.ibtnListPaciente_MouseLeave);
+            this.ibtnListPaciente.MouseHover += new System.EventHandler(this.ibtnListPaciente_MouseHover);
             // 
-            // btn_BuscaPaciente
+            // ibtnInfo
             // 
-            this.btn_BuscaPaciente.Location = new System.Drawing.Point(219, 42);
-            this.btn_BuscaPaciente.Name = "btn_BuscaPaciente";
-            this.btn_BuscaPaciente.Size = new System.Drawing.Size(109, 23);
-            this.btn_BuscaPaciente.TabIndex = 14;
-            this.btn_BuscaPaciente.Text = "Buscar";
-            this.btn_BuscaPaciente.UseVisualStyleBackColor = true;
-            this.btn_BuscaPaciente.Visible = false;
-            this.btn_BuscaPaciente.Click += new System.EventHandler(this.btn_BuscaPaciente_Click);
+            this.ibtnInfo.BackColor = System.Drawing.Color.White;
+            this.ibtnInfo.FlatAppearance.BorderSize = 0;
+            this.ibtnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibtnInfo.IconChar = FontAwesome.Sharp.IconChar.Info;
+            this.ibtnInfo.IconColor = System.Drawing.Color.Black;
+            this.ibtnInfo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnInfo.IconSize = 20;
+            this.ibtnInfo.Location = new System.Drawing.Point(-3, 284);
+            this.ibtnInfo.Name = "ibtnInfo";
+            this.ibtnInfo.Size = new System.Drawing.Size(206, 36);
+            this.ibtnInfo.TabIndex = 31;
+            this.ibtnInfo.Text = "Info";
+            this.ibtnInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibtnInfo.UseVisualStyleBackColor = false;
+            this.ibtnInfo.Click += new System.EventHandler(this.ibtnInfo_Click);
+            this.ibtnInfo.MouseLeave += new System.EventHandler(this.ibtnInfo_MouseLeave);
+            this.ibtnInfo.MouseHover += new System.EventHandler(this.ibtnInfo_MouseHover);
             // 
-            // lbl_IdAlterar
+            // ibtnLimpar
             // 
-            this.lbl_IdAlterar.AutoSize = true;
-            this.lbl_IdAlterar.Location = new System.Drawing.Point(149, 33);
-            this.lbl_IdAlterar.Name = "lbl_IdAlterar";
-            this.lbl_IdAlterar.Size = new System.Drawing.Size(60, 13);
-            this.lbl_IdAlterar.TabIndex = 26;
-            this.lbl_IdAlterar.Text = "Id à alterar:";
-            this.lbl_IdAlterar.Visible = false;
+            this.ibtnLimpar.BackColor = System.Drawing.Color.White;
+            this.ibtnLimpar.FlatAppearance.BorderSize = 0;
+            this.ibtnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibtnLimpar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            this.ibtnLimpar.IconColor = System.Drawing.Color.Black;
+            this.ibtnLimpar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnLimpar.IconSize = 20;
+            this.ibtnLimpar.Location = new System.Drawing.Point(-6, 368);
+            this.ibtnLimpar.Name = "ibtnLimpar";
+            this.ibtnLimpar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.ibtnLimpar.Size = new System.Drawing.Size(206, 36);
+            this.ibtnLimpar.TabIndex = 30;
+            this.ibtnLimpar.Text = "Limpar";
+            this.ibtnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibtnLimpar.UseVisualStyleBackColor = false;
+            this.ibtnLimpar.Click += new System.EventHandler(this.ibtnLimpar_Click);
+            this.ibtnLimpar.MouseLeave += new System.EventHandler(this.ibtnLimpar_MouseLeave);
+            this.ibtnLimpar.MouseHover += new System.EventHandler(this.ibtnLimpar_MouseHover);
             // 
-            // txtb_idAlteracao
+            // pictureBox1
             // 
-            this.txtb_idAlteracao.Enabled = false;
-            this.txtb_idAlteracao.Location = new System.Drawing.Point(219, 17);
-            this.txtb_idAlteracao.Name = "txtb_idAlteracao";
-            this.txtb_idAlteracao.Size = new System.Drawing.Size(109, 20);
-            this.txtb_idAlteracao.TabIndex = 25;
-            this.txtb_idAlteracao.Visible = false;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.txtb_Nome);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.gbBox_rbTipoPessoa);
-            this.groupBox1.Controls.Add(this.cbox_StatusPessoa);
-            this.groupBox1.Controls.Add(this.llbNome);
-            this.groupBox1.Controls.Add(this.lblCGCCPF);
-            this.groupBox1.Controls.Add(this.masktxtb_CGCCPF);
-            this.groupBox1.Location = new System.Drawing.Point(15, 19);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(349, 131);
-            this.groupBox1.TabIndex = 27;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Dados Pessoa";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(12, 245);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(66, 20);
-            this.label8.TabIndex = 27;
-            this.label8.Text = "Dados:";
+            this.pictureBox1.Image = global::Devs2Blu.Projetos.SistemaCadastro.Forms.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 11);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(169, 140);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1450, 722);
-            this.Controls.Add(this.label8);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1750, 707);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.grid_Pacientes);
             this.Controls.Add(this.gbox_cadastro);
             this.Controls.Add(this.menuStrip1);
@@ -648,21 +739,23 @@
             this.Text = "Formulário de Cadastro";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.gbox_cadastro.ResumeLayout(false);
-            this.gbox_Paciente.ResumeLayout(false);
-            this.gbox_Paciente.PerformLayout();
-            this.gbox_Endereco.ResumeLayout(false);
-            this.gbox_Endereco.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.gbBox_rbTipoPessoa.ResumeLayout(false);
             this.gbBox_rbTipoPessoa.PerformLayout();
             this.gbox_Editar.ResumeLayout(false);
             this.gbox_Editar.PerformLayout();
+            this.gbox_Paciente.ResumeLayout(false);
+            this.gbox_Paciente.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.gbox_Endereco.ResumeLayout(false);
+            this.gbox_Endereco.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_Pacientes)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -691,9 +784,7 @@
         private System.Windows.Forms.TextBox txtb_Bairro;
         private System.Windows.Forms.TextBox txtb_Cidade;
         private System.Windows.Forms.ComboBox cbox_UF;
-        private System.Windows.Forms.Button btn_Salvar;
         private System.Windows.Forms.MaskedTextBox masktxtb_CEP;
-        private System.Windows.Forms.Button btn_Limpar;
         private System.Windows.Forms.DataGridView grid_Pacientes;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
@@ -721,7 +812,12 @@
         private System.Windows.Forms.Label lbl_IdAlterar;
         private System.Windows.Forms.Button btn_BuscaPaciente;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private FontAwesome.Sharp.IconButton ibtnListPaciente;
+        private FontAwesome.Sharp.IconButton ibtnInfo;
+        private FontAwesome.Sharp.IconButton ibtnLimpar;
+        private FontAwesome.Sharp.IconButton ibtnSalvar;
     }
 }
 
