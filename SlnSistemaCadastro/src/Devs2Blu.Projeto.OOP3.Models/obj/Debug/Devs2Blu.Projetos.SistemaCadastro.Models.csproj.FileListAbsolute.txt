@@ -30,3 +30,5 @@ C:\Users\Ana Lydia\Devs2Blu.Projetos.SistemaCadastroSQL\Devs2Blu.Projetos.Sistem
 C:\Users\Ana Lydia\Devs2Blu.Projetos.SistemaCadastroSQL\Devs2Blu.Projetos.SistemaCadastroSQL\SlnSistemaCadastro\src\Devs2Blu.Projeto.OOP3.Models\obj\Debug\Devs2Blu.Projetos.SistemaCadastro.Models.csproj.CopyComplete
 C:\Users\Ana Lydia\Devs2Blu.Projetos.SistemaCadastroSQL\Devs2Blu.Projetos.SistemaCadastroSQL\SlnSistemaCadastro\src\Devs2Blu.Projeto.OOP3.Models\obj\Debug\Devs2Blu.Projetos.SistemaCadastro.Models.dll
 C:\Users\Ana Lydia\Devs2Blu.Projetos.SistemaCadastroSQL\Devs2Blu.Projetos.SistemaCadastroSQL\SlnSistemaCadastro\src\Devs2Blu.Projeto.OOP3.Models\obj\Debug\Devs2Blu.Projetos.SistemaCadastro.Models.pdb
+C:\devs2blu\AulasBancoDeDados\Devs2Blu.Projetos.SistemaCadastroSQL\SlnSistemaCadastro\src\Devs2Blu.Projeto.OOP3.Models\bin\Debug\FontAwesome.Sharp.dll
+C:\devs2blu\AulasBancoDeDados\Devs2Blu.Projetos.SistemaCadastroSQL\SlnSistemaCadastro\src\Devs2Blu.Projeto.OOP3.Models\obj\Debug\Devs2Blu.Projetos.SistemaCadastro.Models.csproj.CopyComplete

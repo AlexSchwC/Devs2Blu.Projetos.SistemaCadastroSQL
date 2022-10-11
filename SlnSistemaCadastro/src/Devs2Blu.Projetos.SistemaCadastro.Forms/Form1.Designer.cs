@@ -125,7 +125,7 @@
             this.gbox_cadastro.ForeColor = System.Drawing.Color.White;
             this.gbox_cadastro.Location = new System.Drawing.Point(193, 24);
             this.gbox_cadastro.Name = "gbox_cadastro";
-            this.gbox_cadastro.Size = new System.Drawing.Size(1514, 294);
+            this.gbox_cadastro.Size = new System.Drawing.Size(1514, 271);
             this.gbox_cadastro.TabIndex = 2;
             this.gbox_cadastro.TabStop = false;
             this.gbox_cadastro.Text = "Formulário de Cadastro";
@@ -141,7 +141,7 @@
             this.groupBox1.Controls.Add(this.lblCGCCPF);
             this.groupBox1.Controls.Add(this.masktxtb_CGCCPF);
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(96, 19);
+            this.groupBox1.Location = new System.Drawing.Point(21, 27);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(349, 131);
             this.groupBox1.TabIndex = 27;
@@ -233,7 +233,6 @@
             this.masktxtb_CGCCPF.Name = "masktxtb_CGCCPF";
             this.masktxtb_CGCCPF.Size = new System.Drawing.Size(131, 20);
             this.masktxtb_CGCCPF.TabIndex = 18;
-            this.masktxtb_CGCCPF.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.masktxtb_CGCCPF_MaskInputRejected);
             // 
             // gbox_Editar
             // 
@@ -242,9 +241,9 @@
             this.gbox_Editar.Controls.Add(this.label10);
             this.gbox_Editar.Controls.Add(this.btn_Exluir);
             this.gbox_Editar.ForeColor = System.Drawing.Color.Black;
-            this.gbox_Editar.Location = new System.Drawing.Point(520, 186);
+            this.gbox_Editar.Location = new System.Drawing.Point(397, 176);
             this.gbox_Editar.Name = "gbox_Editar";
-            this.gbox_Editar.Size = new System.Drawing.Size(338, 75);
+            this.gbox_Editar.Size = new System.Drawing.Size(336, 75);
             this.gbox_Editar.TabIndex = 27;
             this.gbox_Editar.TabStop = false;
             this.gbox_Editar.Text = "Excluir Registro";
@@ -287,7 +286,7 @@
             this.gbox_Paciente.Controls.Add(this.lblConvenio);
             this.gbox_Paciente.Controls.Add(this.cbox_Convenio);
             this.gbox_Paciente.ForeColor = System.Drawing.Color.Black;
-            this.gbox_Paciente.Location = new System.Drawing.Point(920, 19);
+            this.gbox_Paciente.Location = new System.Drawing.Point(757, 27);
             this.gbox_Paciente.Name = "gbox_Paciente";
             this.gbox_Paciente.Size = new System.Drawing.Size(335, 131);
             this.gbox_Paciente.TabIndex = 25;
@@ -305,6 +304,9 @@
             // 
             this.cbox_Obito.Enabled = false;
             this.cbox_Obito.FormattingEnabled = true;
+            this.cbox_Obito.Items.AddRange(new object[] {
+            "0",
+            "1"});
             this.cbox_Obito.Location = new System.Drawing.Point(242, 56);
             this.cbox_Obito.Name = "cbox_Obito";
             this.cbox_Obito.Size = new System.Drawing.Size(51, 21);
@@ -355,7 +357,7 @@
             this.groupBox2.Controls.Add(this.rb_Alterar);
             this.groupBox2.Controls.Add(this.rb_Cadastrar);
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
-            this.groupBox2.Location = new System.Drawing.Point(96, 186);
+            this.groupBox2.Location = new System.Drawing.Point(21, 176);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(349, 75);
             this.groupBox2.TabIndex = 13;
@@ -432,7 +434,7 @@
             this.gbox_Endereco.Controls.Add(this.label2);
             this.gbox_Endereco.Controls.Add(this.label1);
             this.gbox_Endereco.ForeColor = System.Drawing.Color.Black;
-            this.gbox_Endereco.Location = new System.Drawing.Point(522, 19);
+            this.gbox_Endereco.Location = new System.Drawing.Point(397, 27);
             this.gbox_Endereco.Name = "gbox_Endereco";
             this.gbox_Endereco.Size = new System.Drawing.Size(336, 131);
             this.gbox_Endereco.TabIndex = 3;
@@ -570,15 +572,14 @@
             // 
             this.grid_Pacientes.AllowUserToAddRows = false;
             this.grid_Pacientes.AllowUserToOrderColumns = true;
-            this.grid_Pacientes.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
+            this.grid_Pacientes.BackgroundColor = System.Drawing.Color.SlateGray;
             this.grid_Pacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grid_Pacientes.Location = new System.Drawing.Point(193, 339);
+            this.grid_Pacientes.Location = new System.Drawing.Point(193, 320);
             this.grid_Pacientes.Name = "grid_Pacientes";
             this.grid_Pacientes.ReadOnly = true;
             this.grid_Pacientes.RowHeadersWidth = 51;
-            this.grid_Pacientes.Size = new System.Drawing.Size(1514, 417);
+            this.grid_Pacientes.Size = new System.Drawing.Size(1514, 412);
             this.grid_Pacientes.TabIndex = 0;
-            this.grid_Pacientes.Visible = false;
             // 
             // fileToolStripMenuItem
             // 
@@ -731,7 +732,7 @@
             this.ibtnCadastrar.Name = "ibtnCadastrar";
             this.ibtnCadastrar.Size = new System.Drawing.Size(173, 42);
             this.ibtnCadastrar.TabIndex = 1;
-            this.ibtnCadastrar.Text = "Cadastrar";
+            this.ibtnCadastrar.Text = "Salvar";
             this.ibtnCadastrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ibtnCadastrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ibtnCadastrar.UseVisualStyleBackColor = false;

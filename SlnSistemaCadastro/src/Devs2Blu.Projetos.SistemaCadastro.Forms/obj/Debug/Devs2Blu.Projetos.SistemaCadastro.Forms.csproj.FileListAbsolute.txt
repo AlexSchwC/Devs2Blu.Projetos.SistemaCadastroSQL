@@ -184,3 +184,4 @@ C:\Users\Ana Lydia\Devs2Blu.Projetos.SistemaCadastroSQL\Devs2Blu.Projetos.Sistem
 C:\Users\Ana Lydia\Devs2Blu.Projetos.SistemaCadastroSQL\Devs2Blu.Projetos.SistemaCadastroSQL\SlnSistemaCadastro\src\Devs2Blu.Projetos.SistemaCadastro.Forms\obj\Debug\Devs2Blu.Projetos.SistemaCadastro.Forms.Properties.Resources.resources
 C:\Users\Ana Lydia\Devs2Blu.Projetos.SistemaCadastroSQL\Devs2Blu.Projetos.SistemaCadastroSQL\SlnSistemaCadastro\src\Devs2Blu.Projetos.SistemaCadastro.Forms\obj\Debug\Devs2Blu.Projetos.SistemaCadastro.Forms.csproj.CoreCompileInputs.cache
 C:\Users\Ana Lydia\Devs2Blu.Projetos.SistemaCadastroSQL\Devs2Blu.Projetos.SistemaCadastroSQL\SlnSistemaCadastro\src\Devs2Blu.Projetos.SistemaCadastro.Forms\obj\Debug\Devs2Blu.Projetos.SistemaCadastro.Forms.csproj.CopyComplete
+C:\devs2blu\AulasBancoDeDados\Devs2Blu.Projetos.SistemaCadastroSQL\SlnSistemaCadastro\src\Devs2Blu.Projetos.SistemaCadastro.Forms\bin\Debug\FontAwesome.Sharp.dll

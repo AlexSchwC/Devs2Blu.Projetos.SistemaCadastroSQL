@@ -57,15 +57,15 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
         private bool ValidaFormCadastro()
         {
             if (txtb_Nome.Text.Equals("")) { return false; }
-            if (masktxtb_CGCCPF.Text.Equals("")) {return false; }
-            if (cbox_Convenio.SelectedIndex.Equals(-1)) {return false; }
-            if (txtb_Risco.Text.Equals("")) {return false; }
-            if (masktxtb_CEP.Text.Equals("")) {return false; }
-            if (cbox_UF.Text.Equals("")) {return false; }
-            if (txtb_Cidade.Text.Equals("")) {return false; }
-            if (txtb_Bairro.Text.Equals("")) {return false; }
-            if (txtb_Rua.Text.Equals("")) {return false; }
-            if (txtb_Numero.Text.Equals("")) {return false; }
+            if (masktxtb_CGCCPF.Text.Equals("")) { return false; }
+            if (cbox_Convenio.SelectedIndex.Equals(-1)) { return false; }
+            if (txtb_Risco.Text.Equals("")) { return false; }
+            if (masktxtb_CEP.Text.Equals("")) { return false; }
+            if (cbox_UF.Text.Equals("")) { return false; }
+            if (txtb_Cidade.Text.Equals("")) { return false; }
+            if (txtb_Bairro.Text.Equals("")) { return false; }
+            if (txtb_Rua.Text.Equals("")) { return false; }
+            if (txtb_Numero.Text.Equals("")) { return false; }
             return true;
         }
 
@@ -82,7 +82,7 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
             {
                 Paciente paciente = new Paciente();
                 Endereco endereco = new Endereco();
-                //paciente.Pessoa.Id = Int32.Parse(txtb_idAlteracao.Text);
+                
                 paciente.Pessoa.Nome = txtb_Nome.Text;
                 paciente.Pessoa.CGCCPF = masktxtb_CGCCPF.Text;
                 paciente.Convenio.Id = (int)cbox_Convenio.SelectedValue;
@@ -103,6 +103,7 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
                     var pacienteResult = PacienteRepository.Save(paciente, conn);
                     endereco.Pessoa = paciente.Pessoa;
                     var enderecoResult = EnderecoRepository.SaveEndereco(endereco, conn);
+
                     if (pacienteResult.Pessoa.Id > 0)
                     {
                         MessageBox.Show($"Pessoa {paciente.Pessoa.Id} - {paciente.Pessoa.Nome} salvo com sucesso!", "Adicionar Pessoa", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -111,11 +112,13 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
                 }
                 else if (rb_Alterar.Checked)
                 {
+                    paciente.Pessoa.Id = Int32.Parse(txtb_idAlteracao.Text);
                     paciente.Status = (FlStatus)cbox_StatusPessoa.SelectedItem;
                     Int32 idBuscar = Int32.Parse(txtb_idAlteracao.Text);
                     var pacienteResult = PacienteRepository.UpdatePessoa(paciente, Int32.Parse(txtb_idAlteracao.Text), conn);
                     endereco.Pessoa = paciente.Pessoa;
                     var enderecoResult = EnderecoRepository.UpdateEndereco(endereco, conn);
+
                     MessageBox.Show($"Pessoa {paciente.Pessoa.Id} - {paciente.Pessoa.Nome} salvo com sucesso!", "Alteração de Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     PopulaDataGridPessoa();
                 }
@@ -123,6 +126,7 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
 
             }
         }
+
         public void searchCEP()
         {
             string cepSearch = masktxtb_CEP.Text;
@@ -247,10 +251,12 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
         {
             CadastraAlteraPaciente();
         }
+
         private void ibtnInfo_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Cadastro de Paciente");
         }
+
         private void ibtnLimpar_Click(object sender, EventArgs e)
         {
             txtb_Nome.Clear();
@@ -270,10 +276,12 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
             txtb_idAlteracao.Clear();
             rb_Cadastrar.Checked = true;
         }
+
         private void ibtnListar_Click(object sender, EventArgs e)
         {
             grid_Pacientes.Visible = true;
         }
+
         private void btn_Exluir_Click(object sender, EventArgs e)
         {
             Int32 idBuscar = Int32.Parse(txtb_idExcluir.Text);
@@ -321,7 +329,6 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
             pessoaData.Read();
             var enderecoData = EnderecoRepository.GetEndereco(Int32.Parse(pacienteData.GetString("id_pessoa")));
             enderecoData.Read();
-            var convenioData = ConvenioRepository.FetchAll();
 
             txtb_Nome.Text = pessoaData.GetString("nome");
             masktxtb_CGCCPF.Text = pessoaData.GetString("cgccpf");
@@ -356,13 +363,9 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
             }
         }
 
-        private void masktxtb_CGCCPF_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
         #endregion
-        #region HouverEvents
+
+        #region HoverEvents
         private void ibtnCadastrar_MouseHover(object sender, EventArgs e)
         {
             ibtnCadastrar.BackColor = Color.DodgerBlue;
