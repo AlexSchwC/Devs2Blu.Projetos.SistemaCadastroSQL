@@ -21,7 +21,7 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms.Data
             Server = "localhost";
             Database = "syscadastro";
             User = "root";
-            Password = "p@lmeiras2";
+            Password = "root";
             ConnectionString = $"Persist Security Info=False;server={Server};database={Database};uid={User};server={Server};uid={User};pwd='{Password}'";
             var conn = new MySqlConnection(ConnectionString);
 
