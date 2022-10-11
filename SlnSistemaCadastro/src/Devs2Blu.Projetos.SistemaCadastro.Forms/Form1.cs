@@ -1,6 +1,7 @@
 ﻿using Devs2Blu.Projetos.SistemaCadastro.Forms.Data;
 using Devs2Blu.Projetos.SistemaCadastro.Models.Enum;
 using Devs2Blu.Projetos.SistemaCadastro.Models.Model;
+using System.Text.RegularExpressions;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -11,11 +12,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
+using Ubiety.Dns.Core;
+using System.IO;
 
 namespace Devs2Blu.Projetos.SistemaCadastro.Forms
 {
     public partial class FormMain : Form
     {
+
+        public event EventHandler TextChanged;
         public MySqlConnection Conn { get; set; }
         public ConvenioRepository ConvenioRepository = new ConvenioRepository();
         public PacienteRepository PacienteRepository = new PacienteRepository();
@@ -251,5 +257,203 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
 
         #endregion
 
+        private void gbox_Endereco_Enter(object sender, EventArgs e)
+        {
+
+
+
+        }
+
+        private void masktxtb_CEP_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+           
+        }
+
+        private void masktxtb_GotFocus(object sender, EventArgs e) {
+
+
+            
+        
+        }
+
+
+        //FIXME: APAGAR
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string cepSearch = masktxtb_CEP.Text; 
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://viacep.com.br/ws/" + cepSearch + "/json/");
+            request.AllowAutoRedirect = false;
+            HttpWebResponse CheckServer = (HttpWebResponse)request.GetResponse();
+
+            if (CheckServer.StatusCode != HttpStatusCode.OK)
+            {
+                MessageBox.Show("Servidor indisponível");
+                return; // Sai da rotina
+            }
+
+            using (Stream webStream = CheckServer.GetResponseStream())
+            {
+                if (webStream != null)
+                {
+                    using (StreamReader responseReader = new StreamReader(webStream))
+                    {
+                        string response = responseReader.ReadToEnd();
+                        response = Regex.Replace(response, "[{},]", string.Empty);
+                        response = response.Replace("\"", "");
+
+                        String[] substrings = response.Split('\n');
+
+                        int cont = 0;
+                        foreach (var substring in substrings)
+                        {
+                            if (cont == 1)
+                            {
+                                string[] valor = substring.Split(":".ToCharArray());
+                                if (valor[0] == "  erro")
+                                {
+                                    MessageBox.Show("CEP não encontrado");
+                                    //Focus();
+                                    return;
+                                }
+                            }
+
+                            //Logradouro
+                            if (cont == 2)
+                            {
+                                string[] valor = substring.Split(":".ToCharArray());
+                                //txtLogradouro.Text = valor[1];
+                                txtb_Rua.Text = valor[1];
+                            }
+
+                            //Complemento
+                            if (cont == 3)
+                            {
+                                string[] valor = substring.Split(":".ToCharArray());
+
+                            }
+
+                            //Bairro
+                            if (cont == 4)
+                            {
+                                string[] valor = substring.Split(":".ToCharArray());
+                                txtb_Bairro.Text = valor[1];
+                            }
+
+                            //Localidade (Cidade)
+                            if (cont == 5)
+                            {
+                                string[] valor = substring.Split(":".ToCharArray());
+                                txtb_Cidade.Text = valor[1];
+                            }
+
+                            //Estado (UF)
+                            if (cont == 6)
+                            {
+                                string[] valor = substring.Split(":".ToCharArray());
+                                cbox_UF.Text = valor[1];
+                            }
+
+                            cont++;
+                        }
+                    }
+                }
+            }
+
+        }
+        
+        public void searchCEP()
+        {
+            string cepSearch = masktxtb_CEP.Text;
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://viacep.com.br/ws/" + cepSearch + "/json/");
+            request.AllowAutoRedirect = false;
+            HttpWebResponse CheckServer = (HttpWebResponse)request.GetResponse();
+
+            if (CheckServer.StatusCode != HttpStatusCode.OK)
+            {
+                MessageBox.Show("Servidor indisponível");
+                return; // Sai da rotina
+            }
+
+            using (Stream webStream = CheckServer.GetResponseStream())
+            {
+                if (webStream != null)
+                {
+                    using (StreamReader responseReader = new StreamReader(webStream))
+                    {
+                        string response = responseReader.ReadToEnd();
+                        response = Regex.Replace(response, "[{},]", string.Empty);
+                        response = response.Replace("\"", "");
+
+                        String[] substrings = response.Split('\n');
+
+                        int cont = 0;
+                        foreach (var substring in substrings)
+                        {
+                            if (cont == 1)
+                            {
+                                string[] valor = substring.Split(":".ToCharArray());
+                                if (valor[0] == "  erro")
+                                {
+                                    MessageBox.Show("CEP não encontrado");
+                                    //Focus();
+                                    return;
+                                }
+                            }
+
+                            //Logradouro
+                            if (cont == 2)
+                            {
+                                string[] valor = substring.Split(":".ToCharArray());
+                                //txtLogradouro.Text = valor[1];
+                                txtb_Rua.Text = valor[1];
+                            }
+
+                            //Complemento
+                            if (cont == 3)
+                            {
+                                string[] valor = substring.Split(":".ToCharArray());
+
+                            }
+
+                            //Bairro
+                            if (cont == 4)
+                            {
+                                string[] valor = substring.Split(":".ToCharArray());
+                                txtb_Bairro.Text = valor[1];
+                            }
+
+                            //Localidade (Cidade)
+                            if (cont == 5)
+                            {
+                                string[] valor = substring.Split(":".ToCharArray());
+                                txtb_Cidade.Text = valor[1];
+                            }
+
+                            //Estado (UF)
+                            if (cont == 6)
+                            {
+                                string[] valor = substring.Split(":".ToCharArray());
+                                cbox_UF.Text = valor[1];
+                            }
+
+                            cont++;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        private void masktxtb_CEP_TextChanged_1(object sender, EventArgs e)
+        {
+            if (masktxtb_CEP.TextLength == 9) {
+                searchCEP();
+            } 
+        }
+
+        private void button1_Enter(object sender, EventArgs e)
+        {
+            //TODO focus color... 
+        }
     }
 }
