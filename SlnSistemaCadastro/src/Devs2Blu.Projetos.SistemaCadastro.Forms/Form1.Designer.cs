@@ -499,7 +499,6 @@
             this.masktxtb_CEP.Size = new System.Drawing.Size(153, 22);
             this.masktxtb_CEP.TabIndex = 3;
             this.masktxtb_CEP.Text = "__.___-__";
-            this.masktxtb_CEP.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.masktxtb_CEP_MaskInputRejected);
             this.masktxtb_CEP.TextChanged += new System.EventHandler(this.masktxtb_CEP_TextChanged_1);
             // 
             // txtb_Numero
