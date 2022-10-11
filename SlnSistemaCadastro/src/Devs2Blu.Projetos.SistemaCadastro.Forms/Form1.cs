@@ -15,6 +15,8 @@ using System.Windows.Forms;
 using System.Net;
 using Ubiety.Dns.Core;
 using System.IO;
+using System.Runtime.CompilerServices;
+using System.Threading;
 
 namespace Devs2Blu.Projetos.SistemaCadastro.Forms
 {
@@ -446,7 +448,15 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
 
         private void masktxtb_CEP_TextChanged_1(object sender, EventArgs e)
         {
-            if (masktxtb_CEP.TextLength == 9) {
+            //TODO substituir o valor atual digitado pelo _ ou .
+
+
+            //Validação do campo
+            if (
+                masktxtb_CEP.TextLength == 9 &&
+                Regex.IsMatch(masktxtb_CEP.Text.Replace("-", ""), "^[0-9]+$") &&
+                masktxtb_CEP.Text[5].Equals('-')
+                ){
                 searchCEP();
             } 
         }
