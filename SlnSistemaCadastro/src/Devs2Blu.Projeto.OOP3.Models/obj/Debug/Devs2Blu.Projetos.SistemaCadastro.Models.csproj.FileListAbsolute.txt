@@ -22,3 +22,11 @@ C:\devs2blu\AulasBancoDeDados\Devs2Blu.Projetos.SistemaCadastroSQL\SlnSistemaCad
 C:\devs2blu\AulasBancoDeDados\Devs2Blu.Projetos.SistemaCadastroSQL\SlnSistemaCadastro\src\Devs2Blu.Projeto.OOP3.Models\obj\Debug\Devs2Blu.Projetos.SistemaCadastro.Models.csproj.CoreCompileInputs.cache
 C:\devs2blu\AulasBancoDeDados\Devs2Blu.Projetos.SistemaCadastroSQL\SlnSistemaCadastro\src\Devs2Blu.Projeto.OOP3.Models\obj\Debug\Devs2Blu.Projetos.SistemaCadastro.Models.dll
 C:\devs2blu\AulasBancoDeDados\Devs2Blu.Projetos.SistemaCadastroSQL\SlnSistemaCadastro\src\Devs2Blu.Projeto.OOP3.Models\obj\Debug\Devs2Blu.Projetos.SistemaCadastro.Models.pdb
+C:\Users\Ana Lydia\Devs2Blu.Projetos.SistemaCadastroSQL\Devs2Blu.Projetos.SistemaCadastroSQL\SlnSistemaCadastro\src\Devs2Blu.Projeto.OOP3.Models\bin\Debug\Devs2Blu.Projetos.SistemaCadastro.Models.dll
+C:\Users\Ana Lydia\Devs2Blu.Projetos.SistemaCadastroSQL\Devs2Blu.Projetos.SistemaCadastroSQL\SlnSistemaCadastro\src\Devs2Blu.Projeto.OOP3.Models\bin\Debug\Devs2Blu.Projetos.SistemaCadastro.Models.pdb
+C:\Users\Ana Lydia\Devs2Blu.Projetos.SistemaCadastroSQL\Devs2Blu.Projetos.SistemaCadastroSQL\SlnSistemaCadastro\src\Devs2Blu.Projeto.OOP3.Models\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\Ana Lydia\Devs2Blu.Projetos.SistemaCadastroSQL\Devs2Blu.Projetos.SistemaCadastroSQL\SlnSistemaCadastro\src\Devs2Blu.Projeto.OOP3.Models\obj\Debug\Devs2Blu.Projetos.SistemaCadastro.Models.csproj.AssemblyReference.cache
+C:\Users\Ana Lydia\Devs2Blu.Projetos.SistemaCadastroSQL\Devs2Blu.Projetos.SistemaCadastroSQL\SlnSistemaCadastro\src\Devs2Blu.Projeto.OOP3.Models\obj\Debug\Devs2Blu.Projetos.SistemaCadastro.Models.csproj.CoreCompileInputs.cache
+C:\Users\Ana Lydia\Devs2Blu.Projetos.SistemaCadastroSQL\Devs2Blu.Projetos.SistemaCadastroSQL\SlnSistemaCadastro\src\Devs2Blu.Projeto.OOP3.Models\obj\Debug\Devs2Blu.Projetos.SistemaCadastro.Models.csproj.CopyComplete
+C:\Users\Ana Lydia\Devs2Blu.Projetos.SistemaCadastroSQL\Devs2Blu.Projetos.SistemaCadastroSQL\SlnSistemaCadastro\src\Devs2Blu.Projeto.OOP3.Models\obj\Debug\Devs2Blu.Projetos.SistemaCadastro.Models.dll
+C:\Users\Ana Lydia\Devs2Blu.Projetos.SistemaCadastroSQL\Devs2Blu.Projetos.SistemaCadastroSQL\SlnSistemaCadastro\src\Devs2Blu.Projeto.OOP3.Models\obj\Debug\Devs2Blu.Projetos.SistemaCadastro.Models.pdb

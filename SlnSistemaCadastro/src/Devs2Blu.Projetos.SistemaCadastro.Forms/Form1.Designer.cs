@@ -58,7 +58,6 @@
             this.txtb_idAlteracao = new System.Windows.Forms.TextBox();
             this.rb_Alterar = new System.Windows.Forms.RadioButton();
             this.rb_Cadastrar = new System.Windows.Forms.RadioButton();
-            this.btn_Salvar = new System.Windows.Forms.Button();
             this.gbox_Endereco = new System.Windows.Forms.GroupBox();
             this.masktxtb_CEP = new System.Windows.Forms.MaskedTextBox();
             this.txtb_Numero = new System.Windows.Forms.TextBox();
@@ -72,14 +71,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_Limpar = new System.Windows.Forms.Button();
             this.grid_Pacientes = new System.Windows.Forms.DataGridView();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.label8 = new System.Windows.Forms.Label();
+            this.panelLogo = new System.Windows.Forms.Panel();
+            this.ibtnLimpar = new FontAwesome.Sharp.IconButton();
+            this.ibtnListar = new FontAwesome.Sharp.IconButton();
+            this.ibtnInfo = new FontAwesome.Sharp.IconButton();
+            this.ibtnCadastrar = new FontAwesome.Sharp.IconButton();
             this.gbox_cadastro.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.gbBox_rbTipoPessoa.SuspendLayout();
@@ -89,6 +91,7 @@
             this.gbox_Endereco.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_Pacientes)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            this.panelLogo.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbox_Convenio
@@ -110,23 +113,23 @@
             // 
             // gbox_cadastro
             // 
-            this.gbox_cadastro.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.gbox_cadastro.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.gbox_cadastro.Controls.Add(this.groupBox1);
             this.gbox_cadastro.Controls.Add(this.gbox_Editar);
             this.gbox_cadastro.Controls.Add(this.gbox_Paciente);
             this.gbox_cadastro.Controls.Add(this.groupBox2);
-            this.gbox_cadastro.Controls.Add(this.btn_Salvar);
             this.gbox_cadastro.Controls.Add(this.gbox_Endereco);
-            this.gbox_cadastro.Controls.Add(this.btn_Limpar);
-            this.gbox_cadastro.Location = new System.Drawing.Point(12, 29);
+            this.gbox_cadastro.ForeColor = System.Drawing.Color.White;
+            this.gbox_cadastro.Location = new System.Drawing.Point(206, 24);
             this.gbox_cadastro.Name = "gbox_cadastro";
-            this.gbox_cadastro.Size = new System.Drawing.Size(1426, 208);
+            this.gbox_cadastro.Size = new System.Drawing.Size(1299, 267);
             this.gbox_cadastro.TabIndex = 2;
             this.gbox_cadastro.TabStop = false;
             this.gbox_cadastro.Text = "Formulário de Cadastro";
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.txtb_Nome);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.gbBox_rbTipoPessoa);
@@ -134,7 +137,8 @@
             this.groupBox1.Controls.Add(this.llbNome);
             this.groupBox1.Controls.Add(this.lblCGCCPF);
             this.groupBox1.Controls.Add(this.masktxtb_CGCCPF);
-            this.groupBox1.Location = new System.Drawing.Point(15, 19);
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
+            this.groupBox1.Location = new System.Drawing.Point(44, 19);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(349, 131);
             this.groupBox1.TabIndex = 27;
@@ -222,21 +226,22 @@
             // masktxtb_CGCCPF
             // 
             this.masktxtb_CGCCPF.Location = new System.Drawing.Point(75, 50);
+            this.masktxtb_CGCCPF.Mask = "000.000.000-00";
             this.masktxtb_CGCCPF.Name = "masktxtb_CGCCPF";
             this.masktxtb_CGCCPF.Size = new System.Drawing.Size(131, 20);
             this.masktxtb_CGCCPF.TabIndex = 18;
-            this.masktxtb_CGCCPF.Text = "___.___.___-__";
             this.masktxtb_CGCCPF.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.masktxtb_CGCCPF_MaskInputRejected);
             // 
             // gbox_Editar
             // 
-            this.gbox_Editar.BackColor = System.Drawing.Color.RosyBrown;
+            this.gbox_Editar.BackColor = System.Drawing.Color.White;
             this.gbox_Editar.Controls.Add(this.txtb_idExcluir);
             this.gbox_Editar.Controls.Add(this.label10);
             this.gbox_Editar.Controls.Add(this.btn_Exluir);
-            this.gbox_Editar.Location = new System.Drawing.Point(1078, 99);
+            this.gbox_Editar.ForeColor = System.Drawing.Color.Black;
+            this.gbox_Editar.Location = new System.Drawing.Point(440, 186);
             this.gbox_Editar.Name = "gbox_Editar";
-            this.gbox_Editar.Size = new System.Drawing.Size(338, 51);
+            this.gbox_Editar.Size = new System.Drawing.Size(338, 75);
             this.gbox_Editar.TabIndex = 27;
             this.gbox_Editar.TabStop = false;
             this.gbox_Editar.Text = "Excluir Registro";
@@ -269,6 +274,7 @@
             // 
             // gbox_Paciente
             // 
+            this.gbox_Paciente.BackColor = System.Drawing.Color.White;
             this.gbox_Paciente.Controls.Add(this.txtb_Risco);
             this.gbox_Paciente.Controls.Add(this.cbox_Obito);
             this.gbox_Paciente.Controls.Add(this.lbl_Status);
@@ -277,7 +283,8 @@
             this.gbox_Paciente.Controls.Add(this.lbl_Risco);
             this.gbox_Paciente.Controls.Add(this.lblConvenio);
             this.gbox_Paciente.Controls.Add(this.cbox_Convenio);
-            this.gbox_Paciente.Location = new System.Drawing.Point(732, 19);
+            this.gbox_Paciente.ForeColor = System.Drawing.Color.Black;
+            this.gbox_Paciente.Location = new System.Drawing.Point(863, 19);
             this.gbox_Paciente.Name = "gbox_Paciente";
             this.gbox_Paciente.Size = new System.Drawing.Size(335, 131);
             this.gbox_Paciente.TabIndex = 25;
@@ -338,13 +345,14 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.Moccasin;
+            this.groupBox2.BackColor = System.Drawing.Color.White;
             this.groupBox2.Controls.Add(this.btn_BuscaPaciente);
             this.groupBox2.Controls.Add(this.lbl_IdAlterar);
             this.groupBox2.Controls.Add(this.txtb_idAlteracao);
             this.groupBox2.Controls.Add(this.rb_Alterar);
             this.groupBox2.Controls.Add(this.rb_Cadastrar);
-            this.groupBox2.Location = new System.Drawing.Point(1078, 18);
+            this.groupBox2.ForeColor = System.Drawing.Color.Black;
+            this.groupBox2.Location = new System.Drawing.Point(44, 186);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(338, 75);
             this.groupBox2.TabIndex = 13;
@@ -405,20 +413,9 @@
             this.rb_Cadastrar.UseVisualStyleBackColor = true;
             this.rb_Cadastrar.CheckedChanged += new System.EventHandler(this.rb_Cadastrar_CheckedChanged);
             // 
-            // btn_Salvar
-            // 
-            this.btn_Salvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Salvar.Location = new System.Drawing.Point(15, 160);
-            this.btn_Salvar.Name = "btn_Salvar";
-            this.btn_Salvar.Size = new System.Drawing.Size(248, 36);
-            this.btn_Salvar.TabIndex = 8;
-            this.btn_Salvar.Text = "Salvar";
-            this.btn_Salvar.UseVisualStyleBackColor = true;
-            this.btn_Salvar.Click += new System.EventHandler(this.btn_Cadastrar_Click);
-            // 
             // gbox_Endereco
             // 
-            this.gbox_Endereco.BackColor = System.Drawing.Color.LightGray;
+            this.gbox_Endereco.BackColor = System.Drawing.Color.White;
             this.gbox_Endereco.Controls.Add(this.masktxtb_CEP);
             this.gbox_Endereco.Controls.Add(this.txtb_Numero);
             this.gbox_Endereco.Controls.Add(this.txtb_Rua);
@@ -431,7 +428,8 @@
             this.gbox_Endereco.Controls.Add(this.label3);
             this.gbox_Endereco.Controls.Add(this.label2);
             this.gbox_Endereco.Controls.Add(this.label1);
-            this.gbox_Endereco.Location = new System.Drawing.Point(379, 19);
+            this.gbox_Endereco.ForeColor = System.Drawing.Color.Black;
+            this.gbox_Endereco.Location = new System.Drawing.Point(440, 19);
             this.gbox_Endereco.Name = "gbox_Endereco";
             this.gbox_Endereco.Size = new System.Drawing.Size(336, 131);
             this.gbox_Endereco.TabIndex = 3;
@@ -565,27 +563,19 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "CEP:";
             // 
-            // btn_Limpar
-            // 
-            this.btn_Limpar.Location = new System.Drawing.Point(282, 160);
-            this.btn_Limpar.Name = "btn_Limpar";
-            this.btn_Limpar.Size = new System.Drawing.Size(82, 36);
-            this.btn_Limpar.TabIndex = 9;
-            this.btn_Limpar.Text = "Limpar";
-            this.btn_Limpar.UseVisualStyleBackColor = true;
-            this.btn_Limpar.Click += new System.EventHandler(this.btn_Limpar_Click);
-            // 
             // grid_Pacientes
             // 
             this.grid_Pacientes.AllowUserToAddRows = false;
             this.grid_Pacientes.AllowUserToOrderColumns = true;
+            this.grid_Pacientes.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.grid_Pacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grid_Pacientes.Location = new System.Drawing.Point(12, 270);
+            this.grid_Pacientes.Location = new System.Drawing.Point(206, 311);
             this.grid_Pacientes.Name = "grid_Pacientes";
             this.grid_Pacientes.ReadOnly = true;
             this.grid_Pacientes.RowHeadersWidth = 51;
-            this.grid_Pacientes.Size = new System.Drawing.Size(1426, 440);
+            this.grid_Pacientes.Size = new System.Drawing.Size(1244, 434);
             this.grid_Pacientes.TabIndex = 0;
+            this.grid_Pacientes.Visible = false;
             // 
             // fileToolStripMenuItem
             // 
@@ -629,22 +619,116 @@
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // label8
+            // panelLogo
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(12, 245);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(66, 20);
-            this.label8.TabIndex = 27;
-            this.label8.Text = "Dados:";
+            this.panelLogo.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.panelLogo.Controls.Add(this.ibtnLimpar);
+            this.panelLogo.Controls.Add(this.ibtnListar);
+            this.panelLogo.Controls.Add(this.ibtnInfo);
+            this.panelLogo.Controls.Add(this.ibtnCadastrar);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelLogo.Location = new System.Drawing.Point(0, 24);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(172, 698);
+            this.panelLogo.TabIndex = 28;
+            // 
+            // ibtnLimpar
+            // 
+            this.ibtnLimpar.BackColor = System.Drawing.Color.White;
+            this.ibtnLimpar.FlatAppearance.BorderSize = 0;
+            this.ibtnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibtnLimpar.ForeColor = System.Drawing.Color.Black;
+            this.ibtnLimpar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            this.ibtnLimpar.IconColor = System.Drawing.Color.Black;
+            this.ibtnLimpar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnLimpar.IconSize = 20;
+            this.ibtnLimpar.Location = new System.Drawing.Point(0, 327);
+            this.ibtnLimpar.Name = "ibtnLimpar";
+            this.ibtnLimpar.Size = new System.Drawing.Size(173, 42);
+            this.ibtnLimpar.TabIndex = 4;
+            this.ibtnLimpar.Text = "Limpar";
+            this.ibtnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibtnLimpar.UseVisualStyleBackColor = false;
+            this.ibtnLimpar.Click += new System.EventHandler(this.ibtnLimpar_Click);
+            this.ibtnLimpar.MouseLeave += new System.EventHandler(this.ibtnLimpar_MouseLeave);
+            this.ibtnLimpar.MouseHover += new System.EventHandler(this.ibtnLimpar_MouseHover);
+            // 
+            // ibtnListar
+            // 
+            this.ibtnListar.BackColor = System.Drawing.Color.White;
+            this.ibtnListar.FlatAppearance.BorderSize = 0;
+            this.ibtnListar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnListar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibtnListar.ForeColor = System.Drawing.Color.Black;
+            this.ibtnListar.IconChar = FontAwesome.Sharp.IconChar.ListAlt;
+            this.ibtnListar.IconColor = System.Drawing.Color.Black;
+            this.ibtnListar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnListar.IconSize = 20;
+            this.ibtnListar.Location = new System.Drawing.Point(0, 375);
+            this.ibtnListar.Name = "ibtnListar";
+            this.ibtnListar.Size = new System.Drawing.Size(173, 42);
+            this.ibtnListar.TabIndex = 3;
+            this.ibtnListar.Text = "Listar Pacientes";
+            this.ibtnListar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnListar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibtnListar.UseVisualStyleBackColor = false;
+            this.ibtnListar.Click += new System.EventHandler(this.ibtnListar_Click);
+            // 
+            // ibtnInfo
+            // 
+            this.ibtnInfo.BackColor = System.Drawing.Color.White;
+            this.ibtnInfo.FlatAppearance.BorderSize = 0;
+            this.ibtnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibtnInfo.ForeColor = System.Drawing.Color.Black;
+            this.ibtnInfo.IconChar = FontAwesome.Sharp.IconChar.Info;
+            this.ibtnInfo.IconColor = System.Drawing.Color.Black;
+            this.ibtnInfo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnInfo.IconSize = 20;
+            this.ibtnInfo.Location = new System.Drawing.Point(0, 423);
+            this.ibtnInfo.Name = "ibtnInfo";
+            this.ibtnInfo.Size = new System.Drawing.Size(176, 42);
+            this.ibtnInfo.TabIndex = 2;
+            this.ibtnInfo.Text = "Info";
+            this.ibtnInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibtnInfo.UseVisualStyleBackColor = false;
+            this.ibtnInfo.Click += new System.EventHandler(this.ibtnInfo_Click);
+            this.ibtnInfo.MouseLeave += new System.EventHandler(this.ibtnInfo_MouseLeave);
+            this.ibtnInfo.MouseHover += new System.EventHandler(this.ibtnInfo_MouseHover);
+            // 
+            // ibtnCadastrar
+            // 
+            this.ibtnCadastrar.BackColor = System.Drawing.Color.White;
+            this.ibtnCadastrar.FlatAppearance.BorderSize = 0;
+            this.ibtnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibtnCadastrar.ForeColor = System.Drawing.Color.Black;
+            this.ibtnCadastrar.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
+            this.ibtnCadastrar.IconColor = System.Drawing.Color.Black;
+            this.ibtnCadastrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnCadastrar.IconSize = 20;
+            this.ibtnCadastrar.Location = new System.Drawing.Point(0, 279);
+            this.ibtnCadastrar.Name = "ibtnCadastrar";
+            this.ibtnCadastrar.Size = new System.Drawing.Size(173, 42);
+            this.ibtnCadastrar.TabIndex = 1;
+            this.ibtnCadastrar.Text = "Cadastrar";
+            this.ibtnCadastrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnCadastrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibtnCadastrar.UseVisualStyleBackColor = false;
+            this.ibtnCadastrar.Click += new System.EventHandler(this.ibtnCadastrar_Click);
+            this.ibtnCadastrar.MouseLeave += new System.EventHandler(this.ibtnCadastrar_MouseLeave);
+            this.ibtnCadastrar.MouseHover += new System.EventHandler(this.ibtnCadastrar_MouseHover);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1450, 722);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.panelLogo);
             this.Controls.Add(this.grid_Pacientes);
             this.Controls.Add(this.gbox_cadastro);
             this.Controls.Add(this.menuStrip1);
@@ -668,6 +752,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grid_Pacientes)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panelLogo.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -696,9 +781,7 @@
         private System.Windows.Forms.TextBox txtb_Bairro;
         private System.Windows.Forms.TextBox txtb_Cidade;
         private System.Windows.Forms.ComboBox cbox_UF;
-        private System.Windows.Forms.Button btn_Salvar;
         private System.Windows.Forms.MaskedTextBox masktxtb_CEP;
-        private System.Windows.Forms.Button btn_Limpar;
         private System.Windows.Forms.DataGridView grid_Pacientes;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
@@ -726,7 +809,11 @@
         private System.Windows.Forms.Label lbl_IdAlterar;
         private System.Windows.Forms.Button btn_BuscaPaciente;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panelLogo;
+        public FontAwesome.Sharp.IconButton ibtnLimpar;
+        public FontAwesome.Sharp.IconButton ibtnListar;
+        public FontAwesome.Sharp.IconButton ibtnInfo;
+        public FontAwesome.Sharp.IconButton ibtnCadastrar;
     }
 }
 
