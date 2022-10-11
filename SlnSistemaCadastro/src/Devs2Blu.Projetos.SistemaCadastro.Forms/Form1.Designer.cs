@@ -221,11 +221,12 @@
             // 
             // masktxtb_CGCCPF
             // 
-            this.masktxtb_CGCCPF.Location = new System.Drawing.Point(75, 54);
+            this.masktxtb_CGCCPF.Location = new System.Drawing.Point(75, 50);
             this.masktxtb_CGCCPF.Name = "masktxtb_CGCCPF";
             this.masktxtb_CGCCPF.Size = new System.Drawing.Size(131, 20);
             this.masktxtb_CGCCPF.TabIndex = 18;
             this.masktxtb_CGCCPF.Text = "___.___.___-__";
+            this.masktxtb_CGCCPF.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.masktxtb_CGCCPF_MaskInputRejected);
             // 
             // gbox_Editar
             // 

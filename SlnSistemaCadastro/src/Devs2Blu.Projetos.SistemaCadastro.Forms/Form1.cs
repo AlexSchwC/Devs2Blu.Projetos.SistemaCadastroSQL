@@ -351,5 +351,10 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
                 searchCEP();
             } 
         }
+
+        private void masktxtb_CGCCPF_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            MessageBox.Show("teste");
+        }
     }
 }
