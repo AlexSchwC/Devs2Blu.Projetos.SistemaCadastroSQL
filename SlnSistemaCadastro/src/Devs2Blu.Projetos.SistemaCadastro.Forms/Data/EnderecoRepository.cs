@@ -21,7 +21,8 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms.Data
             cmd.Parameters.Add("@numero", MySqlDbType.Int32).Value = endereco.Numero;
             cmd.Parameters.Add("@bairro", MySqlDbType.VarChar, 45).Value = endereco.Bairro;
             cmd.Parameters.Add("@cidade", MySqlDbType.VarChar, 30).Value = endereco.Cidade;
-            cmd.Parameters.Add("@uf", MySqlDbType.VarChar, 2).Value = endereco.UF;
+            cmd.Parameters.Add("@uf", MySqlDbType.VarChar, 2).Value = endereco.UF.Substring(0,1);
+            MessageBox.Show(endereco.UF + endereco.UF.Count());
             cmd.ExecuteNonQuery();
 
             return endereco;

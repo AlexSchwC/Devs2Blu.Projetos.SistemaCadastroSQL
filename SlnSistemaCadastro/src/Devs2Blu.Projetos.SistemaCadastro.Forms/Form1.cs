@@ -57,16 +57,15 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
         private bool ValidaFormCadastro()
         {
             if (txtb_Nome.Text.Equals("")) { return false; }
-            if (masktxtb_CGCCPF.Text.Equals("")) { return false; }
-            if (cbox_Convenio.SelectedIndex.Equals(-1)) { return false; }
-            if (txtb_Risco.Text.Equals("")) { return false; }
-            if (masktxtb_CEP.Text.Equals("")) { return false; }
-            if (cbox_UF.SelectedIndex.Equals(-1)) { return false; }
-            if (txtb_Cidade.Text.Equals("")) { return false; }
-            if (txtb_Bairro.Text.Equals("")) { return false; }
-            if (txtb_Rua.Text.Equals("")) { return false; }
-            if (txtb_Numero.Text.Equals("")) { return false; }
-
+            if (masktxtb_CGCCPF.Text.Equals("")) {return false; }
+            if (cbox_Convenio.SelectedIndex.Equals(-1)) {return false; }
+            if (txtb_Risco.Text.Equals("")) {return false; }
+            if (masktxtb_CEP.Text.Equals("")) {return false; }
+            if (cbox_UF.Text.Equals("")) {return false; }
+            if (txtb_Cidade.Text.Equals("")) {return false; }
+            if (txtb_Bairro.Text.Equals("")) {return false; }
+            if (txtb_Rua.Text.Equals("")) {return false; }
+            if (txtb_Numero.Text.Equals("")) {return false; }
             return true;
         }
 
@@ -109,7 +108,8 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
                         MessageBox.Show($"Pessoa {paciente.Pessoa.Id} - {paciente.Pessoa.Nome} salvo com sucesso!", "Adicionar Pessoa", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         PopulaDataGridPessoa();
                     }
-                } else if (rb_Alterar.Checked)
+                }
+                else if (rb_Alterar.Checked)
                 {
                     paciente.Status = (FlStatus)cbox_StatusPessoa.SelectedItem;
                     Int32 idBuscar = Int32.Parse(txtb_idAlteracao.Text);
@@ -120,7 +120,7 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
                     PopulaDataGridPessoa();
                 }
 
-                
+
             }
         }
         public void searchCEP()
@@ -195,7 +195,7 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
                             if (cont == 6)
                             {
                                 string[] valor = substring.Split(":".ToCharArray());
-                                cbox_UF.Text = valor[1];
+                                cbox_UF.Text = valor[1].Replace("\"", "");
                             }
 
                             cont++;
@@ -274,50 +274,6 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
         {
             grid_Pacientes.Visible = true;
         }
-        private void ibtnCadastrar_MouseHover(object sender, EventArgs e)
-        {
-            ibtnCadastrar.BackColor = Color.DodgerBlue;
-            ibtnCadastrar.ForeColor = Color.White;
-            ibtnCadastrar.IconColor = Color.White;
-
-        }
-        private void ibtnCadastrar_MouseLeave(object sender, EventArgs e)
-        {
-            ibtnCadastrar.BackColor = Color.White;
-            ibtnCadastrar.ForeColor = Color.Black;
-            ibtnCadastrar.IconColor = Color.Black;
-        }
-      
-
-        
-
-        private void ibtnLimpar_MouseHover(object sender, EventArgs e)
-        {
-
-            ibtnLimpar.BackColor = Color.DodgerBlue;
-            ibtnLimpar.ForeColor = Color.White;
-            ibtnLimpar.IconColor = Color.White;
-        }
-        private void ibtnLimpar_MouseLeave(object sender, EventArgs e)
-        {
-            ibtnLimpar.BackColor = Color.DodgerBlue;
-            ibtnLimpar.ForeColor = Color.White;
-            ibtnLimpar.IconColor = Color.White;
-        }
-        private void ibtnInfo_MouseHover(object sender, EventArgs e)
-        {
-            ibtnInfo.BackColor = Color.DodgerBlue;
-            ibtnInfo.ForeColor = Color.White;
-            ibtnInfo.IconColor = Color.White;
-
-        }
-
-        private void ibtnInfo_MouseLeave(object sender, EventArgs e)
-        {
-            ibtnInfo.BackColor = Color.White;
-            ibtnInfo.ForeColor = Color.Black;
-            ibtnInfo.IconColor = Color.Black;
-        }
         private void btn_Exluir_Click(object sender, EventArgs e)
         {
             Int32 idBuscar = Int32.Parse(txtb_idExcluir.Text);
@@ -355,7 +311,7 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
             rbJuridica.Enabled = false;
             lbl_IdAlterar.Visible = true;
         }
-        
+
         private void btn_BuscaPaciente_Click(object sender, EventArgs e)
         {
             Int32 idBuscar = Int32.Parse(txtb_idAlteracao.Text);
@@ -381,12 +337,12 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
             cbox_Obito.Text = pacienteData.GetString("fl_obito");
 
         }
-        
+
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Projeto Sistema Cadastro +Devs2Blu V1.0 \n-Alexandre Schanke da Costa");
         }
-      
+
         private void masktxtb_CEP_TextChanged_1(object sender, EventArgs e)
         {
             //Validação do campo
@@ -402,13 +358,63 @@ namespace Devs2Blu.Projetos.SistemaCadastro.Forms
 
         private void masktxtb_CGCCPF_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-          
+
         }
 
-
-
-
         #endregion
+        #region HouverEvents
+        private void ibtnCadastrar_MouseHover(object sender, EventArgs e)
+        {
+            ibtnCadastrar.BackColor = Color.DodgerBlue;
+            ibtnCadastrar.ForeColor = Color.White;
+            ibtnCadastrar.IconColor = Color.White;
 
+        }
+        private void ibtnCadastrar_MouseLeave(object sender, EventArgs e)
+        {
+            ibtnCadastrar.BackColor = Color.White;
+            ibtnCadastrar.ForeColor = Color.Black;
+            ibtnCadastrar.IconColor = Color.Black;
+        }
+        private void ibtnLimpar_MouseHover(object sender, EventArgs e)
+        {
+
+            ibtnLimpar.BackColor = Color.DodgerBlue;
+            ibtnLimpar.ForeColor = Color.White;
+            ibtnLimpar.IconColor = Color.White;
+        }
+        private void ibtnLimpar_MouseLeave(object sender, EventArgs e)
+        {
+            ibtnLimpar.BackColor = Color.White;
+            ibtnLimpar.ForeColor = Color.Black;
+            ibtnLimpar.IconColor = Color.Black;
+        }
+        private void ibtnInfo_MouseHover(object sender, EventArgs e)
+        {
+            ibtnInfo.BackColor = Color.DodgerBlue;
+            ibtnInfo.ForeColor = Color.White;
+            ibtnInfo.IconColor = Color.White;
+        }
+
+        private void ibtnInfo_MouseLeave(object sender, EventArgs e)
+        {
+            ibtnInfo.BackColor = Color.White;
+            ibtnInfo.ForeColor = Color.Black;
+            ibtnInfo.IconColor = Color.Black;
+        }
+        private void ibtnListar_MouseHover(object sender, EventArgs e)
+        {
+            ibtnListar.BackColor = Color.DodgerBlue;
+            ibtnListar.ForeColor = Color.White;
+            ibtnListar.IconColor = Color.White;
+        }
+
+        private void ibtnListar_MouseLeave(object sender, EventArgs e)
+        {
+            ibtnListar.BackColor = Color.White;
+            ibtnListar.ForeColor = Color.Black;
+            ibtnListar.IconColor = Color.Black;
+        }
+        #endregion
     }
 }

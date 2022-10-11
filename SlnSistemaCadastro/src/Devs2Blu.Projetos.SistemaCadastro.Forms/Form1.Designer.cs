@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.cbox_Convenio = new System.Windows.Forms.ComboBox();
             this.lblConvenio = new System.Windows.Forms.Label();
             this.gbox_cadastro = new System.Windows.Forms.GroupBox();
@@ -78,6 +79,7 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.ibtnLimpar = new FontAwesome.Sharp.IconButton();
             this.ibtnListar = new FontAwesome.Sharp.IconButton();
             this.ibtnInfo = new FontAwesome.Sharp.IconButton();
@@ -92,6 +94,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grid_Pacientes)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // cbox_Convenio
@@ -120,9 +123,9 @@
             this.gbox_cadastro.Controls.Add(this.groupBox2);
             this.gbox_cadastro.Controls.Add(this.gbox_Endereco);
             this.gbox_cadastro.ForeColor = System.Drawing.Color.White;
-            this.gbox_cadastro.Location = new System.Drawing.Point(206, 24);
+            this.gbox_cadastro.Location = new System.Drawing.Point(193, 24);
             this.gbox_cadastro.Name = "gbox_cadastro";
-            this.gbox_cadastro.Size = new System.Drawing.Size(1299, 267);
+            this.gbox_cadastro.Size = new System.Drawing.Size(1514, 294);
             this.gbox_cadastro.TabIndex = 2;
             this.gbox_cadastro.TabStop = false;
             this.gbox_cadastro.Text = "Formulário de Cadastro";
@@ -138,7 +141,7 @@
             this.groupBox1.Controls.Add(this.lblCGCCPF);
             this.groupBox1.Controls.Add(this.masktxtb_CGCCPF);
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(44, 19);
+            this.groupBox1.Location = new System.Drawing.Point(96, 19);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(349, 131);
             this.groupBox1.TabIndex = 27;
@@ -239,7 +242,7 @@
             this.gbox_Editar.Controls.Add(this.label10);
             this.gbox_Editar.Controls.Add(this.btn_Exluir);
             this.gbox_Editar.ForeColor = System.Drawing.Color.Black;
-            this.gbox_Editar.Location = new System.Drawing.Point(440, 186);
+            this.gbox_Editar.Location = new System.Drawing.Point(520, 186);
             this.gbox_Editar.Name = "gbox_Editar";
             this.gbox_Editar.Size = new System.Drawing.Size(338, 75);
             this.gbox_Editar.TabIndex = 27;
@@ -284,7 +287,7 @@
             this.gbox_Paciente.Controls.Add(this.lblConvenio);
             this.gbox_Paciente.Controls.Add(this.cbox_Convenio);
             this.gbox_Paciente.ForeColor = System.Drawing.Color.Black;
-            this.gbox_Paciente.Location = new System.Drawing.Point(863, 19);
+            this.gbox_Paciente.Location = new System.Drawing.Point(920, 19);
             this.gbox_Paciente.Name = "gbox_Paciente";
             this.gbox_Paciente.Size = new System.Drawing.Size(335, 131);
             this.gbox_Paciente.TabIndex = 25;
@@ -352,9 +355,9 @@
             this.groupBox2.Controls.Add(this.rb_Alterar);
             this.groupBox2.Controls.Add(this.rb_Cadastrar);
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
-            this.groupBox2.Location = new System.Drawing.Point(44, 186);
+            this.groupBox2.Location = new System.Drawing.Point(96, 186);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(338, 75);
+            this.groupBox2.Size = new System.Drawing.Size(349, 75);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Alterar Dados";
@@ -429,7 +432,7 @@
             this.gbox_Endereco.Controls.Add(this.label2);
             this.gbox_Endereco.Controls.Add(this.label1);
             this.gbox_Endereco.ForeColor = System.Drawing.Color.Black;
-            this.gbox_Endereco.Location = new System.Drawing.Point(440, 19);
+            this.gbox_Endereco.Location = new System.Drawing.Point(522, 19);
             this.gbox_Endereco.Name = "gbox_Endereco";
             this.gbox_Endereco.Size = new System.Drawing.Size(336, 131);
             this.gbox_Endereco.TabIndex = 3;
@@ -569,11 +572,11 @@
             this.grid_Pacientes.AllowUserToOrderColumns = true;
             this.grid_Pacientes.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.grid_Pacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grid_Pacientes.Location = new System.Drawing.Point(206, 311);
+            this.grid_Pacientes.Location = new System.Drawing.Point(193, 339);
             this.grid_Pacientes.Name = "grid_Pacientes";
             this.grid_Pacientes.ReadOnly = true;
             this.grid_Pacientes.RowHeadersWidth = 51;
-            this.grid_Pacientes.Size = new System.Drawing.Size(1244, 434);
+            this.grid_Pacientes.Size = new System.Drawing.Size(1514, 417);
             this.grid_Pacientes.TabIndex = 0;
             this.grid_Pacientes.Visible = false;
             // 
@@ -615,13 +618,14 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1450, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1707, 24);
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // panelLogo
             // 
             this.panelLogo.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.panelLogo.Controls.Add(this.pictureBox2);
             this.panelLogo.Controls.Add(this.ibtnLimpar);
             this.panelLogo.Controls.Add(this.ibtnListar);
             this.panelLogo.Controls.Add(this.ibtnInfo);
@@ -629,8 +633,19 @@
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLogo.Location = new System.Drawing.Point(0, 24);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(172, 698);
+            this.panelLogo.Size = new System.Drawing.Size(172, 708);
             this.panelLogo.TabIndex = 28;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.ErrorImage")));
+            this.pictureBox2.Image = global::Devs2Blu.Projetos.SistemaCadastro.Forms.Properties.Resources.logo;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(166, 161);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 6;
+            this.pictureBox2.TabStop = false;
             // 
             // ibtnLimpar
             // 
@@ -675,6 +690,8 @@
             this.ibtnListar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ibtnListar.UseVisualStyleBackColor = false;
             this.ibtnListar.Click += new System.EventHandler(this.ibtnListar_Click);
+            this.ibtnListar.MouseLeave += new System.EventHandler(this.ibtnListar_MouseLeave);
+            this.ibtnListar.MouseHover += new System.EventHandler(this.ibtnListar_MouseHover);
             // 
             // ibtnInfo
             // 
@@ -727,7 +744,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1450, 722);
+            this.ClientSize = new System.Drawing.Size(1707, 732);
             this.Controls.Add(this.panelLogo);
             this.Controls.Add(this.grid_Pacientes);
             this.Controls.Add(this.gbox_cadastro);
@@ -753,6 +770,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -814,6 +832,7 @@
         public FontAwesome.Sharp.IconButton ibtnListar;
         public FontAwesome.Sharp.IconButton ibtnInfo;
         public FontAwesome.Sharp.IconButton ibtnCadastrar;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 
